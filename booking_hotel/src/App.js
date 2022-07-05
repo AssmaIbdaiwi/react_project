@@ -1,3 +1,4 @@
+
 import Rooms from "./components/Room";
 import Footer from "./layout/Footer";
 import Navbar from "./layout/Nav";
@@ -10,6 +11,8 @@ function App() {
 
         <Rooms />
         <Footer />
+
+
     </div>
   );
 }

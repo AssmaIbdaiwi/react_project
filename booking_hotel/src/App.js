@@ -1,10 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import Rooms from "./components/Room";
+import Footer from "./layout/Footer";
+import Navbar from "./layout/Nav";
+
 
 function App() {
   return (
-    <div className="App">
-        
+    <div >
+        <Navbar />
+
+        <Rooms />
+        <Footer />
     </div>
   );
 }

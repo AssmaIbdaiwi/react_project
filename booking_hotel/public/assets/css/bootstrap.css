@@ -333,7 +333,16 @@ input {
 
 button,
 select {
-  text-transform: none;
+      text-transform: none;
+    border: 1px solid #2b3146;
+    background: transparent;
+    border-radius: 0px;
+    font-size: 13px;
+    line-height: 38px;
+    padding: 10px 20px;
+    color: #777777;
+    width: 100%;
+    z-index: 0;
 }
 
 button,

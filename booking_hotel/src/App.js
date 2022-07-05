@@ -5,6 +5,7 @@ import Navbar from "./layout/Nav";
 
 
 function App() {
+
   return (
     <div >
         <Navbar />

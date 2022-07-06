@@ -663,6 +663,8 @@ button:focus {
 }
 .accomodation_item .hotel_img img {
   transition: all 0.4s linear;
+  min-height: 250px;
+  min-width: 100%;
 }
 .accomodation_item .hotel_img .theme_btn {
   position: absolute;

@@ -31,7 +31,7 @@ class CreateRoomsTable extends Migration
                 'room_description'=>'Comfy beds, 9.3 – Based on 85 reviews This quadruple room has a seating area, air conditioning and tea/coffee maker.Pets are not allowed in this room.Free WiFi ',
                 'room_size'=>'43 m²',
                 'room_facilities'=>'Interconnected room(s) available Smoking: ​No smoking',
-                'room_image'=>'room2.jpg',
+                'room_image'=>'room1.jpg',
                 'room_price'=>'250'
             )
             );
@@ -42,7 +42,7 @@ class CreateRoomsTable extends Migration
                     'room_description'=>'Comfy beds, 9.3 – Based on 85 reviews Rooms are 39 square metres. Free WiFi',
                     'room_size'=>'39 m²',
                     'room_facilities'=>'Interconnected room(s) available Smoking: ​No smoking',
-                    'room_image'=>'room3.jpg',
+                    'room_image'=>'room2.jpg',
                     'room_price'=>'300'
                 )
                 );
@@ -53,7 +53,7 @@ class CreateRoomsTable extends Migration
                     'room_description'=>'Comfy beds, 9.3 – Based on 85 reviews This double room has a balcony, air conditioning and bathrobe. Pets are not allowed in this room. Free WiFi',
                     'room_size'=>'39 m²',
                     'room_facilities'=>'Interconnected room(s) available Smoking: ​No smoking',
-                    'room_image'=>'room4.jpg',
+                    'room_image'=>'room3.jpg',
                     'room_price'=>'200'
                 )
                 );
@@ -64,7 +64,7 @@ class CreateRoomsTable extends Migration
                     'room_description'=>'Comfy beds, 9.3 – Based on 85 reviews This suite has a tea/coffee maker, sofa and bathrobe.Pets are not allowed in this room.Free WiFi ',
                     'room_size'=>'51 m²',
                     'room_facilities'=>'Alarm clock Wardrobe or closet Tea/Coffee maker Air conditioning',
-                    'room_image'=>'room5.jpg',
+                    'room_image'=>'room4.jpg',
                     'room_price'=>'350'
                 )
                 );
@@ -74,7 +74,7 @@ class CreateRoomsTable extends Migration
                         'room_description'=>'Comfy beds, 9.3 – Based on 85 reviews This quadruple room has air conditioning, tea/coffee maker and sofa.Pets are not allowed in this room. Free WiFi',
                         'room_size'=>'43 m²',
                         'room_facilities'=>'Alarm clock Wardrobe or closet Tea/Coffee maker Air conditioning Safety deposit box Private entrance',
-                        'room_image'=>'room6.jpg',
+                        'room_image'=>'room5.jpg',
                         'room_price'=>'150'
                     )
                 );
@@ -84,7 +84,7 @@ class CreateRoomsTable extends Migration
                         'room_description'=>'Comfy beds, 9.3 – Based on 85 reviews This double room features a balcony, dining area and tea/coffee maker.Pets are not allowed in this room. Free WiFi',
                         'room_size'=>'81 m²',
                         'room_facilities'=>'Alarm clock Wardrobe or closet Tea/Coffee maker Air conditioning Safety deposit box Private entrance',
-                        'room_image'=>'room7.jpg',
+                        'room_image'=>'room6.jpg',
                         'room_price'=>'250'
                     )
                 );
@@ -94,7 +94,7 @@ class CreateRoomsTable extends Migration
                         'room_description'=>'Comfy beds, 9.3 – Based on 85 reviews This suite has a balcony, private entrance and tea/coffee maker.Pets are not allowed in this room.Free WiFi Parking (extra fee) ',
                         'room_size'=>'60 m²',
                         'room_facilities'=>'Interconnected room(s) available Smoking: ​No smoking',
-                        'room_image'=>'room8.jpg',
+                        'room_image'=>'room7.jpg',
                         'room_price'=>'175'
                     )
                 );
@@ -104,7 +104,7 @@ class CreateRoomsTable extends Migration
                         'room_description'=>'Comfy beds, 9.3 – Based on 85 reviews This double room features a sofa, seating area and tea/coffee maker.Pets are not allowed in this room. Free WiFi ',
                         'room_size'=>'39 m²',
                         'room_facilities'=>'Alarm clock Wardrobe or closet Tea/Coffee maker Air conditioning Safety deposit box Private entrance',
-                        'room_image'=>'room9.jpg',
+                        'room_image'=>'room8.jpg',
                         'room_price'=>'175'
                     )
                 );
@@ -114,7 +114,7 @@ class CreateRoomsTable extends Migration
                         'room_description'=>'Comfy beds, 9.3 – Based on 85 reviewsThis suite features a balcony, air conditioning and tea/coffee maker.Pets are not allowed in this room.Free WiFi',
                         'room_size'=>'44 m²',
                         'room_facilities'=>'Alarm clock Wardrobe or closet Tea/Coffee maker Air conditioning Safety deposit box Private entrance',
-                        'room_image'=>'room10.jpg',
+                        'room_image'=>'room9.jpg',
                         'room_price'=>'175'
                     )
                 );

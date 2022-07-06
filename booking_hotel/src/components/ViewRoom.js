@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 
 const ViewRoom = () => {
 
-const [room_id]=useParams;
+const {id}=useParams;
 const [room,setRoom]=useState([]);
 
 // useEffect((

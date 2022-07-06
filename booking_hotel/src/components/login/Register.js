@@ -1,9 +1,34 @@
 import React from "react";
-import './css/style.css'
+import './css/style.css';
+import { useParams } from 'react-router-dom';
+import { useState} from "react";
+import axios from 'axios'
 const Register = () => {
+
+    const [user, setUser] = useState({
+     name: "",
+     phone: "",
+     email:"",
+     pass:"",
+    });
+const handleSubmit =(e)=> {
+  e.preventDefault();
+  
+  axios({
+    method: "post",
+    url: "http://localhost:8000/api/register",
+    data:user,
+
+  }).then(res=>{
+    console.log(res)
+  }).catch(error=>{
+    console.log(error.response.data.message);
+  });
+}
+
   return (
     <>
-      <div className="img js-fullheight"  />
+      <div className="img js-fullheight" />
       <section className="ftco-section" id="backg">
         <div className="container">
           <div className="row justify-content-center">
@@ -14,55 +39,66 @@ const Register = () => {
           <div className="row justify-content-center">
             <div className="col-md-6 col-lg-4">
               <div className="login-wrap p-0">
-                <form action="#" className="signin-form">
+                <form
+                  action="#"
+                  onSubmit={handleSubmit}
+                  className="signin-form"
+                >
                   <div className="form-group">
                     <input
+                      onChange={(e) =>
+                        setUser((prev) => ({ ...prev, name: e.target.value }))
+                      }
                       type="text"
                       className="form-control"
                       placeholder="Username"
                       name="name"
+                      value={user.name}
                       required
                     />
                   </div>
 
                   <div className="form-group">
                     <input
-                      type=""
-                      text
+                      onChange={(e) =>
+                        setUser((prev) => ({ ...prev, email: e.target.value }))
+                      }
+                      type="text"
                       className="form-control"
                       placeholder="email"
                       name="email"
+                      value={user.email}
                       required
                     />
                   </div>
                   <div className="form-group">
                     <input
-                      type=""
-                      text
+                      onChange={(e) =>
+                        setUser((prev) => ({ ...prev, phone: e.target.value }))
+                      }
+                      type="text"
                       className="form-control"
                       placeholder="phone"
                       name="phone"
-                      required
-                    />
-                  </div>
-                  <div className="form-group">
-                    <input
-                      type=""
-                      text
-                      className="form-control"
-                      placeholder="address"
-                      name="address"
+                      value={user.phone}
                       required
                     />
                   </div>
 
                   <div className="form-group">
                     <input
+                      onChange={(e) =>
+                        setUser((prev) => ({
+                          ...prev,
+                          pass: e.target.value,
+                        }))
+                      }
                       id="password-field"
                       type="password"
                       className="form-control"
                       placeholder="Password"
                       name="pass"
+                      value={user.pass}
                       required
                     />
                     <span
@@ -78,8 +114,6 @@ const Register = () => {
                       Sign Up
                     </button>
                   </div>
-                 
-                  
                 </form>
               </div>
             </div>

@@ -15,5 +15,11 @@ class RoomController extends Controller
         return $rooms;
     }
 
+    public function single_room($id)
+    {
+        $single_room = Room::find($id);
+        return $single_room;
+    }
+
 
 }

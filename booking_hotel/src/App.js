@@ -7,6 +7,12 @@ import Footer from "./layout/Footer";
 import Navbar from "./layout/Nav";
 import UserProfile from "./components/UserProfile";
 import Home from './components/Home';
+import Register from './components/login/Register';
+import Login from "./components/login/Login";
+import About from './components/About';
+import Contact from './components/Contact';
+
+
 
 function App() {
 
@@ -14,9 +20,14 @@ function App() {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
         <Route path="/rooms" element={<Rooms />} />
-        <Route path="/ViewRoom" element={<ViewRoom />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+     
+        <Route path="/ViewRoom/:id" element={<ViewRoom />} />
         <Route path="/UserProfile" element={<UserProfile />} />
       </Routes>
       <Footer />

@@ -6,6 +6,7 @@ use App\Http\Controllers\RoomController;
 use App\Http\Controllers\UserController;
 use App\Models\Contact;
 use App\Models\User;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,11 @@ Route::post('addbook',[BookController::class , 'addBook']);
 Route::get('contact',[ContactController::class , 'ContactAPI']);
 Route::post('register', [UserController::class, 'registerAPI']);
 Route::post('login', [UserController::class, 'loginAPI']);
+
+Route::get('getuser/{id}',[UserController::class , 'getUser']);
+
+Route::get('getsingle/{id}' ,[RoomController::class ,'single_room' ]);
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });

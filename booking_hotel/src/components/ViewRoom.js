@@ -1,22 +1,17 @@
 
 import  React, { useEffect, useState }  from 'react';
 import { useParams } from "react-router-dom";
-
+import useFetch from '../hooks/useFetch';
 
 const ViewRoom = () => {
 
-const [room_id]=useParams;
-const [room,setRoom]=useState([]);
+const {id} = useParams();
 
-// useEffect((
+const [data , getFetch] = useFetch("http://127.0.0.1:8000/api/getsingle/"+id);
+useEffect(() => {
+    getFetch()
 
-// ))
-
-
-
-
-
-
+}, [])
 
 
 
@@ -86,7 +81,7 @@ const [room,setRoom]=useState([]);
                           type="text"
                           placeholder="Enter a destination or hotel name"
                         /> */}
-                        <h3 style={{ color: "black" }}> Room 3</h3>
+                        <h2 style={{ color: "black" }}> {data.room_name}</h2>
                         <p>
                           If you are looking at blank cassettes on the web, you
                           may be very confused at the

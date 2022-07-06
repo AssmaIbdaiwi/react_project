@@ -77,4 +77,9 @@ class UserController extends Controller
         return response($user, 201);
     }
 
+    public function getUser($id)
+    {
+        $user = User::find($id);
+        return $user;
+    }
 }

@@ -1,3 +1,5 @@
+import {BrowserRouter , Routes , Route} from 'react-router-dom'
+
 
 import Rooms from "./components/Room";
 import Footer from "./layout/Footer";
@@ -7,14 +9,14 @@ import Navbar from "./layout/Nav";
 function App() {
 
   return (
-    <div >
-        <Navbar />
+    <BrowserRouter >
+      <Navbar />
+        <Routes>
+          <Route path='/rooms' element={<Rooms/>} />
 
-        <Rooms />
-        <Footer />
-
-
-    </div>
+        </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 }
 

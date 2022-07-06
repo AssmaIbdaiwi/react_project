@@ -14,6 +14,8 @@ Route::get('contact',[ContactController::class , 'ContactAPI']);
 
 Route::get('getuser/{id}',[UserController::class , 'getUser']);
 
+Route::get('getsingle/{id}' ,[RoomController::class ,'single_room' ]);
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });

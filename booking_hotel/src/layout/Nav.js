@@ -1,33 +1,28 @@
-
+import { NavLink } from "react-router-dom";
 const Navbar =()=>{
     return(
        
-        <header class="header_area">
-            <div class="container">
-                <nav class="navbar navbar-expand-lg navbar-light">
+        <header className="header_area">
+            <div className="container">
+                <nav className="navbar navbar-expand-lg navbar-light">
                    
-                    <a class="navbar-brand logo_h" href="index.html"><img src="image/Logo.png" alt=""/></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
+                    <NavLink className="navbar-brand logo_h" to="index.html"><img src="image/Logo.png" alt=""/></NavLink>
+                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="icon-bar"></span>
+                        <span className="icon-bar"></span>
+                        <span className="icon-bar"></span>
                     </button>
                     
-                    <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-                        <ul class="nav navbar-nav menu_nav ml-auto">
-                            <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li> 
-                            <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
-                            <li class="nav-item"><a class="nav-link" href="accomodation.html">Accomodation</a></li>
-                            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                            <li class="nav-item submenu dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="blog-single.html">Blog Details</a></li>
-                                </ul>
-                            </li> 
-                            <li class="nav-item"><a class="nav-link" href="elements.html">Elemests</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <div className="collapse navbar-collapse offset" id="navbarSupportedContent">
+                        <ul className="nav navbar-nav menu_nav ml-auto">
+                            <li className="nav-item active"><NavLink className="nav-link" to="/">Home</NavLink></li> 
+                            <li className="nav-item"><NavLink className="nav-link" to="/about">About us</NavLink></li>
+                            <li className="nav-item"><NavLink className="nav-link" to="/rooms">Rooms</NavLink></li>
+                            <li className="nav-item"><NavLink className="nav-link" to="/">Gallery</NavLink></li>
+
+                            <li className="nav-item"><NavLink className="nav-link" to="/login">Login</NavLink></li>
+                            <li className="nav-item"><NavLink className="nav-link" to="/signup">Signup</NavLink></li>
+                            <li className="nav-item"><NavLink className="nav-link" to="contact.html">Contact</NavLink></li>
                         </ul>
                     </div> 
                 </nav>

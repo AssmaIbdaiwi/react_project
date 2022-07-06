@@ -1,3 +1,5 @@
+import {BrowserRouter , Routes , Route} from 'react-router-dom'
+
 
 import Rooms from "./components/Room";
 import ViewRoom from "./components/ViewRoom";
@@ -8,15 +10,14 @@ import Navbar from "./layout/Nav";
 function App() {
 
   return (
-    <div >
-        <Navbar />
-
-        <Rooms />
-        <Footer />
-        <ViewRoom/>
-
-
-    </div>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/rooms" element={<Rooms />} />
+        <Route path="/ViewRoom" element={<ViewRoom />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 }
 

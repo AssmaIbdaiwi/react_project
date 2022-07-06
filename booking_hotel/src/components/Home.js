@@ -33,7 +33,7 @@ const Home =()=>{
                     <div className="col-lg-3 col-sm-6">
                         <div className="accomodation_item text-center">
                             <div className="hotel_img">
-                                <img src="../style/image/room1.jpg" alt=""/>
+                                <img src="./assets/image/room1.jpg" alt=""/>
                                 <a href="#" className="btn theme_btn button_hover">Book Now</a>
                             </div>
                             <a href="#"><h4 className="sec_h4">Double Deluxe Room</h4></a>
@@ -43,7 +43,7 @@ const Home =()=>{
                     <div className="col-lg-3 col-sm-6">
                         <div className="accomodation_item text-center">
                             <div className="hotel_img">
-                                <img src="../style/image/room2.jpg" alt=""/>
+                                <img src="./assets/image/room2.jpg" alt=""/>
                                 <a href="#" className="btn theme_btn button_hover">Book Now</a>
                             </div>
                             <a href="#"><h4 className="sec_h4">Single Deluxe Room</h4></a>
@@ -53,7 +53,7 @@ const Home =()=>{
                     <div className="col-lg-3 col-sm-6">
                         <div className="accomodation_item text-center">
                             <div className="hotel_img">
-                                <img src="../style/image/room3.jpg" alt=""/>
+                                <img src="./assets/image/room3.jpg" alt=""/>
                                 <a href="#" className="btn theme_btn button_hover">Book Now</a>
                             </div>
                             <a href="#"><h4 className="sec_h4">Honeymoon Suit</h4></a>
@@ -63,7 +63,7 @@ const Home =()=>{
                     <div className="col-lg-3 col-sm-6">
                         <div className="accomodation_item text-center">
                             <div className="hotel_img">
-                                <img src="../style/image/room4.jpg" alt=""/>
+                                <img src="./assets/image/room4.jpg" alt=""/>
                                 <a href="#" className="btn theme_btn button_hover">Book Now</a>
                             </div>
                             <a href="#"><h4 className="sec_h4">Economy Double</h4></a>
@@ -117,7 +117,7 @@ const Home =()=>{
                     </div>
                     <div className="col-lg-4 col-md-6">
                         <div className="facilities_item">
-                            <h4 className="sec_h4"><i className="lnr lnr-coffee-cup"></i>Bar</h4>
+                            <h4 className="sec_h4"><i className="lnr lnr-coffee-cup"></i>Coffee</h4>
                             <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
                         </div>
                     </div>
@@ -134,11 +134,11 @@ const Home =()=>{
                         <div className="about_content ">
                             <h2 className="title title_color">About Us <br/>Our History<br/>Mission & Vision</h2>
                             <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that, as women, our behavior on the job is beyond reproach. inappropriate behavior is often laughed.</p>
-                            <a href="#" className="button_hover theme_btn_two">Request Custom Price</a>
+                            <a href="/about" className="button_hover theme_btn_two">Request Custom Price</a>
                         </div>
                     </div>
                     <div className="col-md-6">
-                        <img className="img-fluid" src="../style/image/about_bg.jpg" alt="img"/>
+                        <img className="img-fluid" src="./assets/image/about_bg.jpg" alt="img"/>
                     </div>
                 </div>
             </div>
@@ -146,7 +146,7 @@ const Home =()=>{
         {/* <!--================ About History Area  =================-->
         
         <!--================ Testimonial Area  =================--> */}
-        <section className="testimonial_area section_gap">
+        {/* <section className="testimonial_area section_gap">
             <div className="container">
                 <div className="section_title text-center">
                     <h2 className="title_color">Testimonial from our Clients</h2>
@@ -154,7 +154,7 @@ const Home =()=>{
                 </div>
                 <div className="testimonial_slider owl-carousel">
                     <div className="media testimonial_item">
-                        <img className="rounded-circle" src="../style/image/testtimonial-1.jpg" alt=""/>
+                        <img className="rounded-circle" src="./assets/image/testtimonial-1.jpg" alt=""/>
                         <div className="media-body">
                             <p>As conscious traveling Paupers we must always be concerned about our dear Mother Earth. If you think about it, you travel across her face, and She is the </p>
                             <a href="#"><h4 className="sec_h4">Fanny Spencer</h4></a>
@@ -168,7 +168,7 @@ const Home =()=>{
                         </div>
                     </div>    
                     <div className="media testimonial_item">
-                        <img className="rounded-circle" src="../style/image/testtimonial-1.jpg" alt=""/>
+                        <img className="rounded-circle" src="./assets/image/testtimonial-1.jpg" alt=""/>
                         <div className="media-body">
                             <p>As conscious traveling Paupers we must always be concerned about our dear Mother Earth. If you think about it, you travel across her face, and She is the </p>
                             <a href="#"><h4 className="sec_h4">Fanny Spencer</h4></a>
@@ -182,7 +182,7 @@ const Home =()=>{
                         </div>
                     </div>
                     <div className="media testimonial_item">
-                        <img className="rounded-circle" src="../style/image/testtimonial-1.jpg" alt=""/>
+                        <img className="rounded-circle" src="./assets/image/testtimonial-1.jpg" alt=""/>
                         <div className="media-body">
                             <p>As conscious traveling Paupers we must always be concerned about our dear Mother Earth. If you think about it, you travel across her face, and She is the </p>
                             <a href="#"><h4 className="sec_h4">Fanny Spencer</h4></a>
@@ -196,7 +196,7 @@ const Home =()=>{
                         </div>
                     </div>    
                     <div className="media testimonial_item">
-                        <img className="rounded-circle" src="image/testtimonial-1.jpg" alt=""/>
+                        <img className="rounded-circle" src="./assets/image/testtimonial-1.jpg" alt=""/>
                         <div className="media-body">
                             <p>As conscious traveling Paupers we must always be concerned about our dear Mother Earth. If you think about it, you travel across her face, and She is the </p>
                             <a href="#"><h4 className="sec_h4">Fanny Spencer</h4></a>
@@ -211,7 +211,7 @@ const Home =()=>{
                     </div>
                 </div>
             </div>
-        </section>
+        </section> */}
         {/* <!--================ Testimonial Area  =================-->
         
         <!--================ Latest Blog Area  =================--> */}
@@ -225,7 +225,7 @@ const Home =()=>{
                     <div className="col-lg-4 col-md-6">
                         <div className="single-recent-blog-post">
                             <div className="thumb">
-                                <img className="img-fluid" src="../style/image/blog/blog-1.jpg" alt="post"/>
+                                <img className="img-fluid" src="./assets/image/blog/blog-1.jpg" alt="post"/>
                             </div>
                             <div className="details">
                                 <div className="tags">
@@ -241,7 +241,7 @@ const Home =()=>{
                     <div className="col-lg-4 col-md-6">
                         <div className="single-recent-blog-post">
                             <div className="thumb">
-                                <img className="img-fluid" src="image/blog/blog-2.jpg" alt="post"/>
+                                <img className="img-fluid" src="./assets/image/blog/blog-2.jpg" alt="post"/>
                             </div>
                             <div className="details">
                                 <div className="tags">
@@ -257,7 +257,7 @@ const Home =()=>{
                     <div className="col-lg-4 col-md-6">
                         <div className="single-recent-blog-post">
                             <div className="thumb">
-                                <img className="img-fluid" src="image/blog/blog-3.jpg" alt="post"/>
+                                <img className="img-fluid" src="./assets/image/blog/blog-3.jpg" alt="post"/>
                             </div>
                             <div className="details">
                                 <div className="tags">

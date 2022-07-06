@@ -14,7 +14,62 @@ useEffect(() => {
 }, [])
 
 
+const date1 = new Date(book.dataIn);
+const date2 = new Date(book.dataOut);
 
+console.log(getDifferenceInDays(date1, date2));
+
+function getDifferenceInDays(date1, date2) {
+  const diffInMs = Math.abs(date2 - date1);
+  return (diffInMs / (1000 * 60 * 60 * 24)) * data.room_price;
+}
+
+const [book, setBook] = useState({
+  dataIn: "",
+  dataOut: "",
+  room_id: id,
+  user_id: "",
+  total_price: getDifferenceInDays(date1, date2),
+});
+   const handleBooking = (e) => {
+    setBook({
+        [e.target.name]: e.target.value,
+      });
+    };
+
+ const   saveData = async (e) => {
+      e.preventDefault();
+
+      const requestOptions = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          dataIn: e.target.dataIn.value,
+          dataOut: e.target.dataOut.value,
+          room_id: e.target.room_id.value,
+          total_price: e.target.total_price.value,
+          // user_id: e.target.user_id.value,
+        }),
+      };
+
+
+
+
+
+
+      const response = await fetch(
+        "http://127.0.0.1:8000/api/addbook",
+        requestOptions
+      );
+
+      if (response.ok) {
+        alert("Data Added Successfully");
+        window.location.href = "http://localhost:3000/";
+      } else {
+        alert("There is something wrong");
+        window.location.href = "http://localhost:3000/";
+      }
+    };
     return (
       <>
         {/* //// */}
@@ -46,49 +101,96 @@ useEffect(() => {
           </div>
         </section>
         {/* form */}
-        <div
-          id="booking"
-          className="section"
-          style={{ marginTop: "5%", marginBottom: "10%" }}
-        >
+        <div id="booking" className="section">
           <div className="section-center">
             <div className="container">
               <div className="row">
                 <div className="col-md-7 col-md-push-5">
                   <div className="booking-cta">
-                    <h1 style={{ marginBottom: "7%", color: "black" }}>
+                    <p
+                      style={{
+                        marginBottom: "10%",
+                        color: "black",
+                        fontWeight: "bolder",
+                        fontSize: "430%",
+                      }}
+                    >
                       Book your Room
-                    </h1>
-                    <div className="col-md-7">
+                    </p>
+                    <div className="">
                       <img
-                        src="https://thumbs.dreamstime.com/b/smooth-nature-pic-full-hd-126695318.jpg"
-                        alt=""
+                        src={"../assets/image/" + data.room_image}
+                        alt="room-image"
                         className="img-fluid"
+                        style={{ width: "85%", height: "430px" }}
                       />
                     </div>
                   </div>
                 </div>
                 <div
-                  className="col-md-4 col-md-pull-7"
-                  style={{ marginTop: "10%", marginBottom: "10%" }}
+                  className="col-md-5 col-md-pull-7"
+                  style={{ marginTop: "7%", marginBottom: "10%" }}
                 >
                   <div className="booking-form">
-                    <form>
-                      <div className="form-group">
-                        {/* <span className="form-label">Your Destination</span>
-                        <input
-                          className="form-control"
-                          type="text"
-                          placeholder="Enter a destination or hotel name"
-                        /> */}
-                        <h2 style={{ color: "black" }}> {data.room_name}</h2>
-                        <p>
-                          If you are looking at blank cassettes on the web, you
-                          may be very confused at the
-                          <br /> difference in price. You may see some for as
-                          low as $.17 each.
-                        </p>
-                      </div>
+                    <div className="form-group">
+                      <h2 style={{ color: "black" }}> {data.room_name}</h2>
+
+                      <p>
+                        <span
+                          style={{
+                            color: "black",
+                            fontWeight: "bolder",
+                            fontSize: "130%",
+                          }}
+                        >
+                          {" "}
+                          Room size:
+                        </span>{" "}
+                        {data.room_size}
+                        <br />
+                        {data.room_description}
+                        <br />{" "}
+                        <span
+                          style={{
+                            color: "black",
+                            fontWeight: "bolder",
+                            fontSize: "130%",
+                          }}
+                        >
+                          Price:{" "}
+                        </span>
+                        {data.room_price}JD/night.
+                        <br />
+                        <span
+                          style={{
+                            color: "black",
+                            fontWeight: "bolder",
+                            fontSize: "130%",
+                          }}
+                        >
+                          {" "}
+                          Facilities:
+                        </span>{" "}
+                        {data.room_facilities}
+                      </p>
+                    </div>
+
+                    {/* boooking */}
+
+                    <form onSubmit={saveData}>
+                      <input
+                        type="hidden"
+                        name="room_id"
+                        onChange={handleBooking}
+                        value={book.room_id}
+                      />
+                      <input
+                        type="hidden"
+                        name="total_price"
+                        onChange={handleBooking}
+                        value={book.total_price}
+                      />
+                      {/* <input type="hidden" value={user_id} name="user_id" onChange={handleBooking}   value={book.user_id}/> */}
                       <div className="row">
                         <div className="col-sm-6">
                           <div className="form-group">
@@ -97,6 +199,9 @@ useEffect(() => {
                               className="form-control"
                               type="date"
                               required
+                              name="dataIn"
+                              onChange={handleBooking}
+                              value={book.dataIn}
                             />
                           </div>
                         </div>
@@ -106,47 +211,15 @@ useEffect(() => {
                             <input
                               className="form-control"
                               type="date"
+                              name="dataOut"
+                              onChange={handleBooking}
+                              value={book.dataOut}
                               required
-          
                             />
                           </div>
                         </div>
                       </div>
-                      <div className="row">
-                        <div className="col-sm-4">
-                          <div className="form-group">
-                            <span className="form-label">View</span>
-                            <select className="form-control">
-                              <option>1</option>
-                              <option>2</option>
-                              <option>3</option>
-                            </select>
-                            <span className="select-arrow"></span>
-                          </div>
-                        </div>
-                        <div className="col-sm-4">
-                          <div className="form-group">
-                            <span className="form-label">Adults</span>
-                            <select className="form-control">
-                              <option>1</option>
-                              <option>2</option>
-                              <option>3</option>
-                            </select>
-                            <span className="select-arrow"></span>
-                          </div>
-                        </div>
-                        <div className="col-sm-4">
-                          <div className="form-group">
-                            <span className="form-label">Children</span>
-                            <select className="form-control">
-                              <option>0</option>
-                              <option>1</option>
-                              <option>2</option>
-                            </select>
-                            <span className="select-arrow"></span>
-                          </div>
-                        </div>
-                      </div>
+
                       <div className="form-btn">
                         <button className="book_now_btn button_hover">
                           {" "}

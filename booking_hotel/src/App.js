@@ -13,17 +13,12 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-<<<<<<< HEAD
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/rooms" element={<Rooms />} />
         <Route path="/ViewRoom" element={<ViewRoom />} />
+        <Route path="/UserProfile" element={<UserProfile />} />
       </Routes>
-=======
-        <Routes>
-          <Route path='/rooms' element={<Rooms/>} />
-          <Route path='/' element={<Home/>} />
-        </Routes>
->>>>>>> 99e335d03559c7172f6dbea91f5395f53b4e6653
       <Footer />
     </BrowserRouter>
   );

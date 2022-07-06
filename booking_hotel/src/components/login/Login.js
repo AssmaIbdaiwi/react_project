@@ -1,10 +1,12 @@
 import React from "react";
-import "./css/style.css";
+
+
+// import "./css/style.css";
 
 const Login = () => {
   return (
     <>
-  
+
 
 	<div className="img js-fullheight" />
       <section className="ftco-section" id="backg">

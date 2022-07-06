@@ -14,30 +14,36 @@ useEffect(() => {
 }, [])
 
 
-const date1 = new Date(book.dataIn);
-const date2 = new Date(book.dataOut);
 
-console.log(getDifferenceInDays(date1, date2));
-
-function getDifferenceInDays(date1, date2) {
-  const diffInMs = Math.abs(date2 - date1);
-  return (diffInMs / (1000 * 60 * 60 * 24)) * data.room_price;
-}
 
 const [book, setBook] = useState({
   dataIn: "",
   dataOut: "",
   room_id: id,
   user_id: "",
-  total_price: getDifferenceInDays(date1, date2),
+  total_price: "",
 });
+
+
+
+function getDifferenceInDays(date1, date2) {
+  const diffInMs = Math.abs(date2 - date1);
+  return (Math.floor(diffInMs / (1000 * 60 * 60 * 24)) )* data.room_price;
+}
+
+
+
    const handleBooking = (e) => {
     setBook({
+...book,
         [e.target.name]: e.target.value,
       });
     };
 
  const   saveData = async (e) => {
+const date1 = new Date(book.dataIn);
+const date2 = new Date(book.dataOut);
+console.log(getDifferenceInDays(date1, date2));
       e.preventDefault();
 
       const requestOptions = {
@@ -51,11 +57,6 @@ const [book, setBook] = useState({
           // user_id: e.target.user_id.value,
         }),
       };
-
-
-
-
-
 
       const response = await fetch(
         "http://127.0.0.1:8000/api/addbook",

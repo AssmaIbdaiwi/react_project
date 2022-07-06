@@ -9,10 +9,10 @@ function App() {
 
   return (
     <div >
-        {/* <Navbar />
+        <Navbar />
 
         <Rooms />
-        <Footer /> */}
+        <Footer />
         <ViewRoom/>
 
 

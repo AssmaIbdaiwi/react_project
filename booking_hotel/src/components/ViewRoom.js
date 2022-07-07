@@ -16,7 +16,7 @@ const ViewRoom = () => {
     dataIn: "",
     dataOut: "",
     room_id: id,
-    user_id: JSON.parse(localStorage.getItem('user')).id,
+    // user_id: JSON.parse(localStorage.getItem('user')).id,
     total_price: "",
   });
 
@@ -48,7 +48,7 @@ console.log(book);
         dataOut: e.target.dataOut.value,
         room_id: e.target.room_id.value,
         total_price:price,
-        user_id: e.target.user_id.value,
+        // user_id: e.target.user_id.value,
       }),
     };console.log(requestOptions);
 

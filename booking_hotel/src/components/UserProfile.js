@@ -190,7 +190,7 @@ const UserProfile = () => {
                                     <div className="col-md-7">
                                     <div className="media">
                                         <label>Name</label>
-                                        <input id='name' type="text"  disabled />
+                                        <input id='name' type="text" value={data.name} disabled />
                                     </div> <br></br>
                                         <div className="media">
                                             <label>Age</label>
@@ -244,7 +244,7 @@ const UserProfile = () => {
                                     <h6 className="count h2" data-to="500" data-speed="500">Bookings</h6>
                                     <p className="m-0px font-w-600">
                                         
-                                        
+
                                     </p>
                                 </div>
 

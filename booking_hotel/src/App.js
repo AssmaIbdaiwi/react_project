@@ -35,8 +35,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          {/* if (path="/login" | path="/register"){
-        }console.log(path) */}
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/ViewRoom/:id" element={<ViewRoom />} />

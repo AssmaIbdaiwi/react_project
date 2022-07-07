@@ -11,14 +11,15 @@ class BookController extends Controller
 {
     public function addBook(Request $request)
     {
-        // dd($request);
-        // $validator = Validator::make($request->all(), 
+
+
         // ['dateIn' => 'required',
         // 'dateOut' => 'required',] );
     
         // if ($validator->fails()) {
         //     return response()->json(['errors' => $validator->errors()->all()]);
         // }
+
         
         $book = new Book();
         $book->checkIn = $request->dataIn;

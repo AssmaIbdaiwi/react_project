@@ -1,13 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
-import {userContext} from '../App';
+import { userContext } from "../App";
 
 const ViewRoom = () => {
-  const user_id = JSON.parse(localStorage.getItem('user')).id;
- 
-  const { id } = useParams();
 
+  const user_id = JSON.parse(localStorage.getItem('user')).id;
+  const { id } = useParams();
   const [data, getFetch] = useFetch(
     "http://127.0.0.1:8000/api/getsingle/" + id
   );
@@ -190,7 +189,11 @@ const ViewRoom = () => {
                       onChange={handleBooking}
                       value={book.total_price}
                     />
-                    <input type="hidden" name="user_id" onChange={handleBooking}   />
+                    <input
+                      type="hidden"
+                      name="user_id"
+                      onChange={handleBooking}
+                    />
                     <div className="row">
                       <div className="col-sm-6">
                         <div className="form-group">

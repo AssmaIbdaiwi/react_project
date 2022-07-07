@@ -445,7 +445,8 @@ button:focus {
   position: relative;
   overflow: hidden;
   width: 100%;
-  max-height: 500px;
+  /* max-height: 500px; */
+  height: 750px;
 }
 
 .overlay {
@@ -712,8 +713,9 @@ button:focus {
   overflow: hidden;
 }
 .facilities_area .bg-parallax {
-  background: url("../image/facilites_bg.jpg") no-repeat scroll center 0/cover;
-  opacity: 0.15;
+  background: url("https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2014/09/21/1755/AMMGH-P014-Terrace.jpg/AMMGH-P014-Terrace.4x3.jpg") no-repeat scroll center 0/cover;
+  opacity: 0.5;
+  
 }
 
 .facilities_item {

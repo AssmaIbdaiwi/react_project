@@ -30,6 +30,8 @@ const Contact = () => {
                     data-mlat="40.701083"
                     data-mlon="-74.1522848">
                 </div> */}
+
+
                 <div className="row">
                     <div className="col-md-3">
                         <div className="contact_info">

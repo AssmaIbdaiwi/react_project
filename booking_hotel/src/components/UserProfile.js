@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import './userProfile.css';
 import { ProfileContext } from "./ProfileContext";
 import { useContext } from "react";
+import UpdateData from './UpdateData';
 
 function EditProfile() {
 
@@ -189,7 +190,7 @@ const UserProfile = () => {
                                     <div className="col-md-7">
                                     <div className="media">
                                         <label>Name</label>
-                                        <input id='name' type="text"  value={data.address} disabled />
+                                        <input id='name' type="text"  disabled />
                                     </div> <br></br>
                                         <div className="media">
                                             <label>Age</label>
@@ -241,7 +242,10 @@ const UserProfile = () => {
 
                                 <div className="count-data text-center">
                                     <h6 className="count h2" data-to="500" data-speed="500">Bookings</h6>
-                                    <p className="m-0px font-w-600">my bookings</p>
+                                    <p className="m-0px font-w-600">
+                                        
+                                        
+                                    </p>
                                 </div>
 
 

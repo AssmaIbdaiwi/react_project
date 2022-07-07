@@ -3,9 +3,7 @@ import React from 'react';
 const Contact = () => {
     return (
     <>
-
-
-        
+  
         {/* <!--================Breadcrumb Area =================--> */}
         <section className="breadcrumb_area">
             <div className="overlay bg-parallax" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background=""></div>

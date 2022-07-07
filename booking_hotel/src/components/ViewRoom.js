@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
+import {userContext} from '../App';
 
 const ViewRoom = () => {
+  const user_id = useContext(userContext);
+  console.log(user_id)
   const { id } = useParams();
 
   const [data, getFetch] = useFetch(
@@ -16,7 +19,7 @@ const ViewRoom = () => {
     dataIn: "",
     dataOut: "",
     room_id: id,
-    // user_id: JSON.parse(localStorage.getItem('user')).id,
+    user_id:JSON.parse(localStorage.getItem('user')).id,
     total_price: "",
   });
 
@@ -37,7 +40,7 @@ const ViewRoom = () => {
     const date2 = new Date(book.dataOut);
     console.log(getDifferenceInDays(date1, date2));
     const price = getDifferenceInDays(date1, date2);
-console.log(book);
+
     e.preventDefault();
 
     const requestOptions = {
@@ -48,9 +51,9 @@ console.log(book);
         dataOut: e.target.dataOut.value,
         room_id: e.target.room_id.value,
         total_price:price,
-        // user_id: e.target.user_id.value,
+        user_id: e.target.user_id.value,
       }),
-    };console.log(requestOptions);
+    };
 
     const response = await fetch(
       "http://127.0.0.1:8000/api/addbook",
@@ -65,6 +68,7 @@ console.log(book);
       window.location.href = "http://localhost:3000/";
     }
   };
+  console.log(book)
   return (
     <>
       {/* //// */}
@@ -185,7 +189,7 @@ console.log(book);
                       onChange={handleBooking}
                       value={book.total_price}
                     />
-                    {/* <input type="hidden" value={user_id} name="user_id" onChange={handleBooking}   value={book.user_id}/> */}
+                    <input type="hidden" name="user_id" onChange={handleBooking}   />
                     <div className="row">
                       <div className="col-sm-6">
                         <div className="form-group">

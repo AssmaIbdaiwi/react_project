@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
-import {userContext} from '../App';
+import { userContext } from "../App";
 
 const ViewRoom = () => {
-  const user_id = useContext(userContext);
-  console.log(user_id.id);
+  const user_id = JSON.parse(localStorage.getItem("user")).id;
+
   const { id } = useParams();
 
   const [data, getFetch] = useFetch(
@@ -19,7 +19,7 @@ const ViewRoom = () => {
     dataIn: "",
     dataOut: "",
     room_id: id,
-    user_id: user_id.id,
+    user_id: user_id,
     total_price: "",
   });
 
@@ -50,10 +50,11 @@ const ViewRoom = () => {
         dataIn: e.target.dataIn.value,
         dataOut: e.target.dataOut.value,
         room_id: e.target.room_id.value,
-        total_price:price,
-        // user_id: e.target.user_id.value,
+        total_price: price,
+        user_id: user_id,
       }),
     };
+    console.log(requestOptions);
 
     const response = await fetch(
       "http://127.0.0.1:8000/api/addbook",
@@ -62,13 +63,13 @@ const ViewRoom = () => {
 
     if (response.ok) {
       alert("Book Successfully");
-      window.location.href = "http://localhost:3000/";
+      // window.location.href = "http://localhost:3000/";
     } else {
       alert("There is something wrong");
-      window.location.href = "http://localhost:3000/";
+      // window.location.href = "http://localhost:3000/";
     }
   };
-  console.log(book)
+  // console.log(book)
   return (
     <>
       {/* //// */}
@@ -189,7 +190,11 @@ const ViewRoom = () => {
                       onChange={handleBooking}
                       value={book.total_price}
                     />
-                    <input type="hidden" name="user_id" onChange={handleBooking}   value={user_id.id}/>
+                    <input
+                      type="hidden"
+                      name="user_id"
+                      onChange={handleBooking}
+                    />
                     <div className="row">
                       <div className="col-sm-6">
                         <div className="form-group">

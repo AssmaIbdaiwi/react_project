@@ -1,5 +1,6 @@
 import React from "react";
-import './css/style.css';
+// import '.cd/css/style.css'
+// import './css/style.css';
 import { useParams } from 'react-router-dom';
 import { useState} from "react";
 import axios from 'axios'

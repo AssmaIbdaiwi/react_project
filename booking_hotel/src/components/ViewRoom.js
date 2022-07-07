@@ -3,9 +3,11 @@ import { useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import { userContext } from "../App";
 
-const ViewRoom = () => {
 
-  const user_id = JSON.parse(localStorage.getItem('user')).id;
+const ViewRoom = () => {
+  const {userData , setUserData } = useContext(userContext)
+  const user_id = userData.id ; 
+  // const user_id = JSON.parse(localStorage.getItem('user')).id;
   const { id } = useParams();
   const [data, getFetch] = useFetch(
     "http://127.0.0.1:8000/api/getsingle/" + id
@@ -50,7 +52,7 @@ const ViewRoom = () => {
         dataOut: e.target.dataOut.value,
         room_id: e.target.room_id.value,
         total_price:price,
-        user_id: user_id,
+        user_id:user_id,
       }),
     };
     console.log(requestOptions);

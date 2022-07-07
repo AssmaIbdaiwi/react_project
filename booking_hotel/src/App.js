@@ -10,24 +10,27 @@ import Register from './components/login/Register';
 import Login from "./components/login/Login";
 import About from './components/About';
 import Contact from './components/Contact';
-import { createContext, useState,useEffect } from 'react';
+import { createContext, useState } from 'react';
 
 export const userContext = createContext();
+
+
 
 function App() {
 
   const [userData , setUserData ]= useState([]);
-
-  useEffect(() => {
-    
-    setUserData(JSON.parse(localStorage.getItem('user')));
-
-  }, [])
   
 
+  // useEffect(() => {
+    
+  //   setUserData(JSON.parse(localStorage.getItem('user')));
+
+  // }, [])
+  
+// console.log(islogged)
   return (
     <BrowserRouter>
-      <userContext.Provider value={userData}>
+      <userContext.Provider value={{userData , setUserData }}>
         <Navbar />
 
         <Routes>

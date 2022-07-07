@@ -1,36 +1,46 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import "./css/style.css";
 import {useState } from "react";
 import axios from "axios";
+import { userContext } from "../../App";
+
 const Login = () => {
-
-	 const [user, setUser] = useState({
-     email: "",
-     pass: "",
-
-   });
+  
+  const {userData , setUserData } = useContext(userContext)
+  
+  const [user, setUser] = useState({
+    email: "",
+    pass: "",
+    
+  });
 
    const handleSubmit = (e) => {
      e.preventDefault();
-
+    
      axios({
        method: "post",
        url: "http://localhost:8000/api/login",
        data: user,
      })
        .then((res) => {
-		 localStorage.setItem("user", JSON.stringify(res.data));
-         console.log(res.data);
-		 
-       })
+        setUserData(res.data)
+        if(userData){
+          sessionStorage.setItem(res.data.id , true)
+          window.location.href='http://localhost:3000/';
+        }
+        
+
+       }) 
        .catch((error) => {
          console.log(error.response.data.message);
        });
    };
 
+
+   
   return (
     <>
-      <section className="vh-100">
+      <section className="vh-100 mt-5">
         <div className="container py-5 h-100">
           <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col-12 col-md-8 col-lg-6 col-xl-5">

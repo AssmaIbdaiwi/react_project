@@ -26,7 +26,7 @@ const handleSubmit =(e)=> {
 
   return (
     <>
-      <section className="vh-100" style={{ backgroundColor: "#508bfc" }}>
+      <section className="vh-100">
         <div className="container py-5 h-100">
           <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col-12 col-md-8 col-lg-6 col-xl-5">
@@ -41,8 +41,10 @@ const handleSubmit =(e)=> {
                     onSubmit={handleSubmit}
                     classNameName="signin-form"
                   >
-
                     <div className="form-outline mb-4">
+                      <label className="form-label" for="typeEmailX-2">
+                        Name
+                      </label>
                       <input
                         onChange={(e) =>
                           setUser((prev) => ({ ...prev, name: e.target.value }))
@@ -54,9 +56,6 @@ const handleSubmit =(e)=> {
                         value={user.name}
                         required
                       />
-                      <label className="form-label" for="typeEmailX-2">
-                        Name
-                      </label>
                     </div>
 
                     <div className="form-outline mb-4">
@@ -101,6 +100,15 @@ const handleSubmit =(e)=> {
 
                     <div className="form-outline mb-4">
                       <input
+                        onChange={(e) =>
+                          setUser((prev) => ({
+                            ...prev,
+                            pass: e.target.value,
+                          }))
+                        }
+                        name="pass"
+                        value={user.pass}
+                        required
                         type="password"
                         id="typePasswordX-2"
                         className="form-control form-control-lg"
@@ -122,11 +130,12 @@ const handleSubmit =(e)=> {
                         Remember password{" "}
                       </label>
                     </div>
+
                     <button
                       className="btn btn-primary btn-lg btn-block"
                       type="submit"
                     >
-                      Login
+                      Register
                     </button>
                   </form>
                 </div>
@@ -135,7 +144,6 @@ const handleSubmit =(e)=> {
           </div>
         </div>
       </section>
-
     </>
   );
 };

@@ -3,11 +3,37 @@ import React from "react";
 
 // import "./css/style.css";
 
+// import "./css/style.css";
+import {useState } from "react";
+import axios from "axios";
 const Login = () => {
+
+	 const [user, setUser] = useState({
+     email: "",
+     pass: "",
+
+   });
+
+   const handleSubmit = (e) => {
+     e.preventDefault();
+
+     axios({
+       method: "post",
+       url: "http://localhost:8000/api/login",
+       data: user,
+     })
+       .then((res) => {
+		 localStorage.setItem("user", JSON.stringify(res.data));
+         console.log(res.data);
+		 
+       })
+       .catch((error) => {
+         console.log(error.response.data.message);
+       });
+   };
+
   return (
     <>
-
-
 	<div className="img js-fullheight" />
       <section className="ftco-section" id="backg">
 		<div className="container">
@@ -20,12 +46,22 @@ const Login = () => {
 				<div className="col-md-6 col-lg-4">
 					<div className="login-wrap p-0">
 		      	<h3 className="mb-4 text-center">Have an account?</h3>
-		      	<form action="#" className="signin-form">
+		      	<form action="#" className="signin-form" onSubmit={handleSubmit}>
 		      		<div className="form-group">
-		      			<input type="text" className="form-control" placeholder="Username" name='name' required/>
+		      			<input type="text" className="form-control" placeholder="Email" name='email' required value={user.email} 
+						onChange={(e) =>
+                        setUser((prev) => ({ ...prev, email: e.target.value }))
+                      }/>
 		      		</div>
 	            <div className="form-group">
-	              <input id="password-field" type="password" className="form-control" placeholder="Password" name ='pass' required/>
+	              <input id="password-field" type="password" className="form-control" placeholder="Password" name ='pass' required value={user.pass}
+				   onChange={(e) =>
+                        setUser((prev) => ({
+                          ...prev,
+                          pass: e.target.value,
+                        }))
+                      }
+				  />
 	              <span toggle="#password-field" className="fa fa-fw fa-eye field-icon toggle-password"></span>
 	            </div>
 	            <div className="form-group">
@@ -50,8 +86,6 @@ const Login = () => {
 			</div>
 		</div>
 	</section>
-
-
 
     </>
   );

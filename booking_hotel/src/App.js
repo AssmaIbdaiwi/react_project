@@ -24,7 +24,7 @@ function App() {
 
   }, [])
   
-  console.log(userData)
+
   return (
     <BrowserRouter>
       <userContext.Provider value={userData}>

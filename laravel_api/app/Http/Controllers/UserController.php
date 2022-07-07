@@ -21,7 +21,29 @@ class UserController extends Controller
     //         return response()->json(['errors' => $validator->errors()->all()]);
     //     }
     // }
+    public  function getInfo($id)
+    {
+        
+        $data = User::find($id);
+        // $data = User::all();
+        return $data;
+    }
 
+    public function update(Request $request,$id)
+    {
+
+      
+        $user=User::findOrfail($id);
+        
+        $user->update([
+            'name'=>$request->input('name'),
+        'email'=>$request->input('email'),
+        'age'=>$request->input('age'),
+        'address'=>$request->input('address'),
+        'phone'=>$request->input('phone')
+    ]);
+    $user->save();
+}
     public function registerAPI(Request $request)
     {
 

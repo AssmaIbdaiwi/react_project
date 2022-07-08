@@ -1,4 +1,4 @@
-import {BrowserRouter , Routes , Route} from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Rooms from "./components/Room";
 import ViewRoom from "./components/ViewRoom";
@@ -12,25 +12,26 @@ import About from './components/About';
 import Contact from './components/Contact';
 import { createContext, useState } from 'react';
 import UpdateDataU from './components/UpdateDataU';
+import Notfound from './components/Notfound';
 export const userContext = createContext();
 
 
 
 function App() {
 
-  const [userData , setUserData ]= useState([]);
-  
+  const [userData, setUserData] = useState([]);
+
 
   // useEffect(() => {
-    
+
   //   setUserData(JSON.parse(localStorage.getItem('user')));
 
   // }, [])
-  
-// console.log(islogged)
+
+  // console.log(islogged)
   return (
     <BrowserRouter>
-      <userContext.Provider value={{userData , setUserData }}>
+      <userContext.Provider value={{ userData, setUserData }}>
         <Navbar />
 
         <Routes>
@@ -44,11 +45,11 @@ function App() {
           <Route path="/ViewRoom/:id" element={<ViewRoom />} />
           <Route path="/UserProfile" element={<UserProfile />} />
           <Route path="/edit" element={<UpdateDataU />} />
-
         </Routes>
         <Footer />
       </userContext.Provider>
     </BrowserRouter>
+
   );
 
 

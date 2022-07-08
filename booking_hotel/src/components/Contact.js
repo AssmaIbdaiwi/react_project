@@ -76,7 +76,10 @@ const Contact = () => {
                         </form>
                     </div>
                 </div>
+            </div>  <div className="container">
+   
             </div>
+
         </section>
         {/* <!--================Contact Area =================--> */}
 

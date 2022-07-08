@@ -21,7 +21,7 @@ const SaveInfo = async () => {
 
     const newData = await res.json();
     const saveData = async (e) => {
-        // e.preventDefault();
+        e.preventDefault();
 
         const requestOptions = 
         {
@@ -39,7 +39,7 @@ const SaveInfo = async () => {
             
         }
      
-        const response = await fetch(`http://127.0.0.1:8000/api/users/1`, requestOptions);
+        const response = await fetch(`http://127.0.0.1:8000/api/update/1`, requestOptions);
 
         if (response.ok) {
            return alert('Data Updated Successfully');

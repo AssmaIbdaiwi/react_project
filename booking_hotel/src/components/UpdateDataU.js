@@ -5,59 +5,72 @@ import { ProfileContext } from "./ProfileContext";
 import { useContext } from "react";
 import UpdateData from './UpdateDataU';
 import { Link } from 'react-router-dom';
-
+import axios from 'axios';
 
 //update function 
-const SaveInfo = async () => {
-
-
-    const user_id = sessionStorage.getItem('user_id');
-
-    const res = await fetch(`http://127.0.0.1:8000/api/update/` + user_id);
-
-    const newData = await res.json();
-    const saveData = async (e) => {
-        e.preventDefault();
-
-        const requestOptions =
-        {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-
-            body: JSON.stringify({
-                name: e.target.name.value,
-                email: e.target.email.value,
-                phone: e.target.phone.value,
-                age: e.target.age.value,
-                address: e.target.address.value
-
-            })
-
-        }
-
-        const response = await fetch(`http://127.0.0.1:8000/api/update/` + user_id, requestOptions);
-
-        if (response.ok) {
-            return alert('Data Updated Successfully');
-        }
-
-        else {
-            return alert('There is something wrong');
-        }
-    }
-    saveData();
-
-    useEffect(() => {
-        saveData();
-    }
-        , []);
-
-
-}
-
-
 
 const UpdateDataU = () => {
+
+    const [user, setUser] = useState({
+        name: "",
+        phone: "",
+        email: "",
+        age: "",
+        address: ""
+    });
+
+    const SaveInfo = async (e) => {
+         e.preventDefault();
+        const user_id = sessionStorage.getItem('1');
+
+        axios({
+            method: "post",
+            url: 'http://127.0.0.1:8000/api/updater/` + user_id',
+            data:user,
+        
+          }).then(res=>{
+            console.log(res)
+            alert('You have been registered successfully');
+            
+          }).catch(error=>{
+            console.log(error.response.data.message);
+          });
+        
+
+        // const requestOptions =
+        // {
+        //     method: 'POST',
+        //     headers: { 'Content-Type': 'application/json' },
+
+        //     body: JSON.stringify(
+        //         {
+        //             name: e.target.name.value,
+        //             email: e.target.email.value,
+        //             phone: e.target.phone.value,
+        //             age: e.target.age.value,
+        //             address: e.target.address.value
+
+        //         }
+        //     )
+        // }
+        // console.log(requestOptions);
+
+        // const response = await fetch(`http://127.0.0.1:8000/api/update/` + user_id, requestOptions);
+
+        // if (response.ok) {
+        //     return alert('Data Updated Successfully');
+        // }
+
+        // else {
+        //     return alert('There is something wrong');
+        // }
+    }
+
+    // useEffect(() => {
+    //     SaveInfo();
+    // }
+    //     , []);
+
 
 
     return (
@@ -86,23 +99,29 @@ const UpdateDataU = () => {
                         {/* start */}
 
                         <div id='uesrInfo' className="about-text go-to ">
-                            <form onSubmit={SaveInfo} >
+                            <form  onSubmit={SaveInfo} >
+
                                 <div className="row about-list">
 
                                     <div className="col-md-7">
                                         <div className="media">
                                             <label>Name</label>
-                                            <input id='name' type="text" />
+                                            <input onChange={(e) =>
+                                                setUser((prev) => ({ ...prev, name: e.target.value }))}
+                                                name='name' type="text" />
                                         </div> <br></br>
                                         <div className="media">
                                             <label>Age</label>
-                                            <input id='age' type="text" />
+
+                                            <input onChange={(e) =>
+                                                setUser((prev) => ({ ...prev, age: e.target.value }))} name='age' type="text" />
                                         </div>
                                         <br></br>
                                         <div className="media">
                                             <label>Residence</label>
 
-                                            <input id='address' type="text" />
+                                            <input onChange={(e) =>
+                                                setUser((prev) => ({ ...prev, address: e.target.value }))} name='address' type="text" />
                                         </div> <br></br>
                                         {/* <div className="media">
                                     <label>Address</label>
@@ -113,12 +132,18 @@ const UpdateDataU = () => {
                                     <div className="col-md-7">
                                         <div className="media">
                                             <label>E-mail</label>
-                                            <input id='email' type="text" />
+
+                                            <input
+                                                onChange={(e) =>
+                                                    setUser((prev) =>
+                                                        ({ ...prev, email: e.target.value }))} name='email' type="text"
+                                            />
 
                                         </div> <br></br>
                                         <div className="media">
                                             <label>Phone</label>
-                                            <input id='phone' type="text" />
+                                            <input onChange={(e) =>
+                                                setUser((prev) => ({ ...prev, phone: e.target.value }))} name='phone' type="text" />
 
                                         </div>
 
@@ -191,6 +216,6 @@ const UpdateDataU = () => {
 
 
     )
-}
 
+}
 export default UpdateDataU;

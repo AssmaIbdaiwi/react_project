@@ -42,6 +42,7 @@ class UserController extends Controller
         'address'=>$request->input('address'),
         'phone'=>$request->input('phone')
     ]);
+    // $user->name=$request->name;
     $user->save();
 }
     public function registerAPI(Request $request)

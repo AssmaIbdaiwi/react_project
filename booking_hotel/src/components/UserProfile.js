@@ -56,7 +56,6 @@ const UserProfile = () => {
 
         , []);
 
-    console.log(bookingData)
 
     const userBookings = bookingData.map((book) => {
         return (

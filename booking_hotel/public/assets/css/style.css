@@ -42,11 +42,30 @@ Table of Content:
 /*Color Variables*/
 /*=================== fonts ====================*/
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
-.col-md-offset-right-1, .col-lg-offset-right-1 {
+.col-md-offset-right-1,
+.col-lg-offset-right-1 {
   margin-right: 8.33333333%;
 }
 
 /*---------------------------------------------------- */
+
+.bdge {
+  height: 21px;
+  background-color: orange;
+  color: #fff;
+  font-size: 11px;
+  padding: 8px;
+  border-radius: 4px;
+  line-height: 3px;
+}
+
+.comments {
+  text-decoration: underline;
+  text-underline-position: under;
+  cursor: pointer;
+}
+
+
 /*----------------------------------------------------*/
 .list_style {
   list-style: none;
@@ -58,7 +77,8 @@ a {
   text-decoration: none;
   transition: all 0.3s ease-in-out;
 }
-a:hover, a:focus {
+a:hover,
+a:focus {
   text-decoration: none;
   outline: none;
 }
@@ -91,7 +111,12 @@ section {
   background: #fff;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
 }
@@ -107,7 +132,7 @@ button:focus {
 }
 
 .section_gap {
-  padding: 120px 0;
+  padding: 90px 0;
 }
 
 .d_flex {
@@ -308,7 +333,8 @@ button:focus {
 .navbar .menu_nav .nav-item .nav-link:after {
   display: none;
 }
-.navbar .menu_nav .nav-item:hover .nav-link, .navbar .menu_nav .nav-item.active .nav-link {
+.navbar .menu_nav .nav-item:hover .nav-link,
+.navbar .menu_nav .nav-item.active .nav-link {
   color: #52c5fd;
 }
 .navbar .menu_nav .nav-item.submenu {
@@ -431,7 +457,8 @@ button:focus {
   z-index: 1;
 }
 .banner_area .bg-parallax {
-  background: url("../image/banner_bg.jpg") no-repeat scroll center 0/cover;
+  background: url("https://wallpaperaccess.com/full/2690549.jpg") no-repeat
+    scroll center 0 / cover;
   opacity: 0.5;
 }
 .banner_area .position {
@@ -446,7 +473,7 @@ button:focus {
   overflow: hidden;
   width: 100%;
   /* max-height: 500px; */
-  height: 750px;
+  height: 600px;
 }
 
 .overlay {
@@ -461,7 +488,7 @@ button:focus {
 
 .banner_content {
   color: #fff;
-  margin-bottom: 94px;
+  margin-bottom: 9px;
 }
 .banner_content h6 {
   font-size: 14px;
@@ -525,7 +552,10 @@ button:focus {
 .book_tabel_item .form-group .input-group .form-control::-moz-placeholder {
   color: #777777;
 }
-.book_tabel_item .form-group .input-group .form-control::-webkit-input-placeholder {
+.book_tabel_item
+  .form-group
+  .input-group
+  .form-control::-webkit-input-placeholder {
   color: #777777;
 }
 .book_tabel_item .form-group .input-group .form-control:focus {
@@ -577,7 +607,7 @@ button:focus {
   overflow: hidden;
 }
 .breadcrumb_area .bg-parallax {
-  background: url("../image/about_banner.jpg") no-repeat scroll center 0/cover;
+  background: url("../image/about_banner.jpg") no-repeat scroll center 0 / cover;
   opacity: 0.5;
   z-index: -1;
 }
@@ -647,7 +677,8 @@ button:focus {
   padding: 187px 0px 104px;
 }
 .blog_banner_two .bg-parallax {
-  background: url(../image/banner/banner-2.jpg) no-repeat scroll center top/cover;
+  background: url(../image/banner/banner-2.jpg) no-repeat scroll center
+    top/cover;
 }
 
 /*=============End Blog Banner css =============*/
@@ -713,9 +744,9 @@ button:focus {
   overflow: hidden;
 }
 .facilities_area .bg-parallax {
-  background: url("https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2014/09/21/1755/AMMGH-P014-Terrace.jpg/AMMGH-P014-Terrace.4x3.jpg") no-repeat scroll center 0/cover;
+  background: url("https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2014/09/21/1755/AMMGH-P014-Terrace.jpg/AMMGH-P014-Terrace.4x3.jpg")
+    no-repeat scroll center 0 / cover;
   opacity: 0.5;
-  
 }
 
 .facilities_item {
@@ -1040,10 +1071,16 @@ button:focus {
 .blog_right_sidebar .search_widget .input-group .form-control:-moz-placeholder {
   color: #fff;
 }
-.blog_right_sidebar .search_widget .input-group .form-control::-moz-placeholder {
+.blog_right_sidebar
+  .search_widget
+  .input-group
+  .form-control::-moz-placeholder {
   color: #fff;
 }
-.blog_right_sidebar .search_widget .input-group .form-control::-webkit-input-placeholder {
+.blog_right_sidebar
+  .search_widget
+  .input-group
+  .form-control::-webkit-input-placeholder {
   color: #fff;
 }
 .blog_right_sidebar .search_widget .input-group .form-control:focus {
@@ -1168,7 +1205,9 @@ button:focus {
 .blog_right_sidebar .newsletter_widget .form-control::-moz-placeholder {
   color: #cccccc;
 }
-.blog_right_sidebar .newsletter_widget .form-control::-webkit-input-placeholder {
+.blog_right_sidebar
+  .newsletter_widget
+  .form-control::-webkit-input-placeholder {
   color: #cccccc;
 }
 .blog_right_sidebar .newsletter_widget .form-control:focus {
@@ -1967,7 +2006,11 @@ button:focus {
     margin-top: 30px;
   }
 }
-b, sup, sub, u, del {
+b,
+sup,
+sub,
+u,
+del {
   color: #f8b600;
 }
 
@@ -1995,11 +2038,21 @@ h6 {
   font-size: 14px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   line-height: 1.5em;
 }
 
-.typography h1, .typography h2, .typography h3, .typography h4, .typography h5, .typography h6 {
+.typography h1,
+.typography h2,
+.typography h3,
+.typography h4,
+.typography h5,
+.typography h6 {
   color: #777777;
 }
 
@@ -2290,7 +2343,10 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
 }
 
-.progress-table .table-head .serial, .progress-table .table-head .country, .progress-table .table-head .visit, .progress-table .table-head .percentage {
+.progress-table .table-head .serial,
+.progress-table .table-head .country,
+.progress-table .table-head .visit,
+.progress-table .table-head .percentage {
   color: #222222;
   line-height: 40px;
   text-transform: uppercase;
@@ -2303,7 +2359,10 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
 }
 
-.progress-table .table-row .serial, .progress-table .table-row .country, .progress-table .table-row .visit, .progress-table .table-row .percentage {
+.progress-table .table-row .serial,
+.progress-table .table-row .country,
+.progress-table .table-row .visit,
+.progress-table .table-row .percentage {
   display: flex;
   align-items: center;
 }
@@ -2738,7 +2797,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .primary-checkbox input:checked + label {
-  background: url(../image/elements/primary-check.png) no-repeat center center/cover;
+  background: url(../image/elements/primary-check.png) no-repeat center
+    center/cover;
   border: none;
 }
 
@@ -2776,7 +2836,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .confirm-checkbox input:checked + label {
-  background: url(../image/elements/success-check.png) no-repeat center center/cover;
+  background: url(../image/elements/success-check.png) no-repeat center
+    center/cover;
   border: none;
 }
 
@@ -2819,7 +2880,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .disabled-checkbox input:checked + label {
-  background: url(../image/elements/disabled-check.png) no-repeat center center/cover;
+  background: url(../image/elements/disabled-check.png) no-repeat center
+    center/cover;
   border: none;
 }
 
@@ -2857,7 +2919,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .primary-radio input:checked + label {
-  background: url(../image/elements/primary-radio.png) no-repeat center center/cover;
+  background: url(../image/elements/primary-radio.png) no-repeat center
+    center/cover;
   border: none;
 }
 
@@ -2895,7 +2958,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .confirm-radio input:checked + label {
-  background: url(../image/elements/success-radio.png) no-repeat center center/cover;
+  background: url(../image/elements/success-radio.png) no-repeat center
+    center/cover;
   border: none;
 }
 
@@ -2949,7 +3013,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .disabled-radio input:checked + label {
-  background: url(../image/elements/disabled-radio.png) no-repeat center center/cover;
+  background: url(../image/elements/disabled-radio.png) no-repeat center
+    center/cover;
   border: none;
 }
 
@@ -3069,7 +3134,7 @@ h1, h2, h3, h4, h5, h6 {
 /*============== footer-area css ===============*/
 .footer-area {
   background: #04091e;
-  padding: 142px 0px;
+  padding: 50px 0px;
 }
 
 .single-footer-widget ul li a {
@@ -3170,4 +3235,4 @@ h1, h2, h3, h4, h5, h6 {
   color: #f3c300;
 }
 
-/*---------------------------------------------------- *//*# sourceMappingURL=style.css.map */
+/*---------------------------------------------------- */ /*# sourceMappingURL=style.css.map */

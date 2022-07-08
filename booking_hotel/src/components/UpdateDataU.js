@@ -10,20 +10,16 @@ import { Link } from 'react-router-dom';
 //update function 
 const SaveInfo = async () => {
 
-    //API 
-   
-    // ${userData}
-    // const [userData , setUserData ]= useState([]);
-  
-    // setUserData(JSON.parse(localStorage.getItem('user'))).id;
 
-   const res = await fetch(`http://127.0.0.1:8000/api/update/1`);
+    const user_id = sessionStorage.getItem('user_id');
+
+    const res = await fetch(`http://127.0.0.1:8000/api/update/` + user_id);
 
     const newData = await res.json();
     const saveData = async (e) => {
         e.preventDefault();
 
-        const requestOptions = 
+        const requestOptions =
         {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -36,39 +32,39 @@ const SaveInfo = async () => {
                 address: e.target.address.value
 
             })
-            
+
         }
-     
-        const response = await fetch(`http://127.0.0.1:8000/api/update/1`, requestOptions);
+
+        const response = await fetch(`http://127.0.0.1:8000/api/update/` + user_id, requestOptions);
 
         if (response.ok) {
-           return alert('Data Updated Successfully');
+            return alert('Data Updated Successfully');
         }
 
         else {
-          return  alert('There is something wrong');
+            return alert('There is something wrong');
         }
     }
     saveData();
 
     useEffect(() => {
         saveData();
-     }
-         , []);
-  
-    
+    }
+        , []);
+
+
 }
 
 
 
 const UpdateDataU = () => {
 
-   
+
     return (
 
 
         <section className="section about-section gray-bg" id="about">
-                                       
+
 
 
             {/* {!isLoggedIn ? (
@@ -80,7 +76,7 @@ const UpdateDataU = () => {
           </>
         ) : 
         ( */}
-        
+
             <div style={{ border: '1px solid', padding: '50px' }} className="container">
 
                 <div className="row align-items-center flex-row-reverse ">
@@ -90,23 +86,23 @@ const UpdateDataU = () => {
                         {/* start */}
 
                         <div id='uesrInfo' className="about-text go-to ">
-                            <form onSubmit={SaveInfo} >                  
+                            <form onSubmit={SaveInfo} >
                                 <div className="row about-list">
-                                   
+
                                     <div className="col-md-7">
-                                    <div className="media">
-                                        <label>Name</label>
-                                        <input id='name' type="text"   />
-                                    </div> <br></br>
+                                        <div className="media">
+                                            <label>Name</label>
+                                            <input id='name' type="text" />
+                                        </div> <br></br>
                                         <div className="media">
                                             <label>Age</label>
-                                            <input id='age' type="text"   />
+                                            <input id='age' type="text" />
                                         </div>
                                         <br></br>
                                         <div className="media">
                                             <label>Residence</label>
 
-                                            <input id='address' type="text"   />
+                                            <input id='address' type="text" />
                                         </div> <br></br>
                                         {/* <div className="media">
                                     <label>Address</label>
@@ -117,26 +113,26 @@ const UpdateDataU = () => {
                                     <div className="col-md-7">
                                         <div className="media">
                                             <label>E-mail</label>
-                                            <input id='email' type="text"  />
+                                            <input id='email' type="text" />
 
                                         </div> <br></br>
                                         <div className="media">
                                             <label>Phone</label>
-                                            <input id='phone' type="text"   />
+                                            <input id='phone' type="text" />
 
                                         </div>
 
 
                                     </div>
-                                    
+
 
                                 </div>
                                 <br></br><br></br>
-                                <input   id='input7Save' type="button" className="btn btn-warning click" value={'Save'} />
+                                <input id='input7Save' type="button" className="btn btn-warning click" value={'Save'} />
                             </form>
                         </div>
 
-                   {/* end */}
+                        {/* end */}
 
                         <div id='bookings' style={{ border: '1px solid', display: 'none' }} className="counter">
                             <div className="row">
@@ -149,7 +145,7 @@ const UpdateDataU = () => {
                                 <div className="count-data text-center">
                                     <h6 className="count h2" data-to="500" data-speed="500">Bookings</h6>
                                     <p className="m-0px font-w-600">
-                                        
+
 
                                     </p>
                                 </div>
@@ -161,18 +157,18 @@ const UpdateDataU = () => {
 
                     <div className="col-lg-6">
                         <div className="d-flex flex-column align-items-center text-center about-avatar">
-                            <img style={{width:'200px'}}
-                            
-                             src={"https://pinonon.com/wp/wp-content/uploads/2016/06/c73e868161010a36daad4c089694e3a4-260x300.jpg"} /> <br></br>
+                            <img style={{ width: '200px' }}
 
-<Link type="button" to="/back">
+                                src={"https://pinonon.com/wp/wp-content/uploads/2016/06/c73e868161010a36daad4c089694e3a4-260x300.jpg"} /> <br></br>
 
-<button className="btn btn-dark" type="button">
-    Back
-</button>
+                            <Link type="button" to="/back">
+
+                                <button className="btn btn-dark" type="button">
+                                    Back
+                                </button>
 
 
-</Link>
+                            </Link>
 
                             {/* <input onClick={SaveInfo} id='input7Save' type="button" style={{display:'none'}}  className="btn btn-warning"  value={'Save'} /><br></br> */}
                             {/* <input onClick={Mybookings} id='input8Show' type="button" className="btn btn-dark click" value={'My bookings'} />

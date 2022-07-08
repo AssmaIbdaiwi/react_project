@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('users/{id}',[UserController::class , 'getInfo']);
-Route::get('updater/{id}',[UserController::class , 'update']);
+Route::post('update/{id}',[UserController::class , 'update']);
 Route::get('books/{id}',[BookController::class , 'getInfoBook']);
 
 Route::get('apirooms',[RoomController::class , 'RoomAPI']);

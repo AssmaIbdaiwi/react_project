@@ -5,20 +5,6 @@ import { ProfileContext } from "./ProfileContext";
 import { useContext } from "react";
 import UpdateData from './UpdateDataU';
 
-// function EditProfile() {
-
-//     document.getElementById('age').disabled = false;
-//     document.getElementById('address').disabled = false;
-//     //   document.getElementById('input3').disabled = false;
-//     document.getElementById('email').disabled = false;
-//     document.getElementById('phone').disabled = false;
-//     document.getElementById('input6').style.display = 'none';
-//     document.getElementById('input7Save').style.display = 'block';
-//     document.getElementById('name').disabled = false;
-
-
-
-// }
 function Info() {
     //API 
     document.getElementById('uesrInfo').style.display = 'block';
@@ -35,61 +21,7 @@ function Info() {
     document.getElementById('name').disabled = true;
 
 }
-// http://127.0.0.1:8000/api/books/1
 
-//update function 
-// const SaveInfo = async () => {
-
-
-
-//     //API 
-
-//     let { id } = useParams();
-//     const res = await fetch('http://127.0.0.1:8000/api/users/1');
-//     const newData = await res.json();
-//     const saveData = async (e) => {
-//         e.preventDefault();
-
-//         const requestOptions =
-//         {
-//             method: 'POST',
-//             headers: { 'Content-Type': 'application/json' },
-
-//             body: JSON.stringify({
-//                 name: e.target.name.value,
-//                 email: e.target.email.value,
-//                 phone: e.target.phone.value,
-//                 age: e.target.age.value,
-//                 address: e.target.address.value
-
-//             })
-
-//         }
-
-//         const response = await fetch(`http://127.0.0.1:8000/api/users/1`, requestOptions);
-
-//         if (response.ok) {
-//             alert('Data Updated Successfully');
-//         }
-
-//         else {
-//             alert('There is something wrong');
-//         }
-//     }
-//     useEffect(() => {
-//         saveData();
-//     }
-//         , []);
-//     document.getElementById('name').disabled = true;
-//     document.getElementById('age').disabled = true;
-//     document.getElementById('address').disabled = true;
-//     //   document.getElementById('input3').disabled = true;
-//     document.getElementById('email').disabled = true;
-//     document.getElementById('phone').disabled = true;
-//     document.getElementById('input6').style.display = 'block';
-//     document.getElementById('input7Save').style.display = 'none';
-
-// }
 
 
 

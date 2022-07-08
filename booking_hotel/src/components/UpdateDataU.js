@@ -63,56 +63,7 @@ const SaveInfo = async () => {
 
 const UpdateDataU = () => {
 
-    // const { isLoggedIn } = useContext(ProfileContext);
-
-    // const { name, setName } = useState('');
-    // const { age, setAge } = useState('');
-    // const { email, setEmail } = useState('');
-    // const { phone, setPhone } = useState('');
-
-    // const { address, setAddress } = useState('');
-
-    // const [ data, setData ] = useState({});
-    //  let { id } = useParams();
-
-
-    // const fetchProfile = async () => {
-    //     const response = await fetch('http://127.0.0.1:8000/api/users/1')
-    //     const myProfile = await response.json();
-        // setName(myProfile.name);
-        // setAge(myProfile.age);
-        // setEmail(myProfile.email);
-        // setAddress(myProfile.address);
-        // setPhone(myProfile.phone);
-    //     setData(myProfile);
-    //     console.log(myProfile)
-
-    // }
-
-    // useEffect(() => {
-    //    fetchProfile();
-    // }
-    //     , []);
-
-    //     const { bookings, setBookings } = useState({});
    
-    //    const fetchBookings = async () => {
-    //        const res = await fetch('')
-    //        const myBookings= await res.json();
-    //        // setName(myProfile.name);
-    //        // setAge(myProfile.age);
-    //        // setEmail(myProfile.email);
-    //        // setAddress(myProfile.address);
-    //        // setPhone(myProfile.phone);
-    //     //    setBookings(myProfile);
-   
-    //    }
-   
-    //    useEffect(() => {
-    //     fetchBookings();
-    //    }
-    //        , []);
-    //       
     return (
 
 

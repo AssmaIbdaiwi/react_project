@@ -1,5 +1,5 @@
 import {NavLink} from 'react-router-dom'
-import { useEffect } from 'react';
+import { useEffect } from "react";
 import useFetch from '../hooks/useFetch';
 
 const Rooms =()=>{
@@ -8,23 +8,51 @@ const Rooms =()=>{
         getFetch()
 
     }, [])
+ 
+    
+
+
     
     
+    
+  
+
+
+
+
+
+
+
    const all =  data.map((room)=>{
-        return(
+
+        return (
+          <div className="col-lg-4 col-sm-6">
+            <div className="accomodation_item text-center">
+              <div className="hotel_img">
+                <img
+                  src={"assets/image/" + room.room_image}
+                  width="100%"
+                  height="90%"
+                  alt=""
+                />
+                <a
+                  href={"ViewRoom/" + room.id}
+                  className="btn theme_btn button_hover"
             
-            <div className="col-lg-4 col-sm-6">
-                    <div className="accomodation_item text-center">
-                        <div className="hotel_img">
-                            <img src={"assets/image/"+room.room_image} width="100%" height="90%" alt=""/>
-                            <a href={"ViewRoom/"+room.id} className="btn theme_btn button_hover">Book Now</a>
-                        </div>
-                        <a href="#"><h4 className="sec_h4">{room.room_name}</h4></a>
-                        <h5>{room.room_price}<small>/night</small></h5>
-                    </div>
-                    
+                >
+                  Book Now
+                </a>
+              </div>
+              <a href="#">
+                <h4 className="sec_h4">{room.room_name}</h4>
+              </a>
+              <h5>
+                {room.room_price}
+                <small>/night</small>
+              </h5>
             </div>
-        )
+          </div>
+        );
     })
     
     return(

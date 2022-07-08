@@ -7,6 +7,7 @@ const ViewRoom = () => {
 
   const user_id = JSON.parse(localStorage.getItem('user')).id;
   const { id } = useParams();
+  
   const [data, getFetch] = useFetch(
     "http://127.0.0.1:8000/api/getsingle/" + id
   );

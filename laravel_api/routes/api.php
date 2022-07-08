@@ -16,7 +16,6 @@ Route::post('update/{id}',[UserController::class , 'update']);
 Route::get('books/{id}',[BookController::class , 'getInfoBook']);
 
 Route::get('apirooms',[RoomController::class , 'RoomAPI']);
-Route::get('apicomment',[CommentController::class , 'CommentAPI']);
 Route::post('addbook',[BookController::class , 'addBook']);
 Route::post('addcomment',[CommentController::class , 'addComment']);
 Route::get('contact',[ContactController::class , 'ContactAPI']);
@@ -30,3 +29,7 @@ Route::get('getsingle/{id}' ,[RoomController::class ,'single_room' ]);
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::get('apicomment/{id}',[CommentController::class , 'CommentAPI']);
+Route::post('addComment',[CommentController::class , 'addComment']);

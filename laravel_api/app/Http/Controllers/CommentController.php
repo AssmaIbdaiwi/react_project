@@ -9,9 +9,10 @@ use Illuminate\Http\Request;
 class CommentController extends Controller
 {
 
-        public  function CommentAPI()
+        public  function CommentAPI($id)
     {
-        $com = Comment::all();
+        $com = Comment::select('comments.*', 'users.name')
+        ->join('users', 'users.id', '=', 'comments.user_id_comment')->get();
         return $com;
     }
 
@@ -21,6 +22,8 @@ class CommentController extends Controller
         
         $comment = new Comment();
         $comment->subject = $request->subject;
+        $comment->user_id_comment = $request->user_id_comment;
+        $comment->room_id_comment = $request->room_id_comment;
         $comment->save();
 
     }

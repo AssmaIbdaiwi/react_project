@@ -20,7 +20,7 @@ const handleSubmit =(e)=> {
   }).then(res=>{
     console.log(res)
     alert('You have been registered successfully');
-    
+     window.location.href = "http://localhost:3000/login";
   }).catch(error=>{
     console.log(error.response.data.message);
   });

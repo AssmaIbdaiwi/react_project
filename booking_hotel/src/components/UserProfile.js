@@ -58,8 +58,8 @@ const UserProfile = () => {
 
 
     const userBookings = bookingData.map((book) => {
-        return (
-            <tr>
+        return (                   
+            <tr>               
                 <td>{book.id}</td>
                 <td>{book.checkIn}</td>
                 <td>{book.checkOut}</td>
@@ -118,9 +118,9 @@ const UserProfile = () => {
 
 
                                 </div>
-                                <br></br><br></br>
                             </form>
                         </div>
+                        <br></br><br></br>
 
                         <div id='bookings' style={{ border: '1px solid', display: 'none' }} className="counter">
                             <div className="row">
@@ -128,7 +128,7 @@ const UserProfile = () => {
                                 <div className="count-data text-center">
                                     <h6 className="count h2" data-to="500" data-speed="500">Bookings</h6>
 
-                                    <table className="table mt-5">
+                                    <table className="table mt-2">
                                         <thead>
                                             <tr>
                                                 <th>#</th>
@@ -177,6 +177,7 @@ const UserProfile = () => {
 
 
             </div>
+            <br></br>
             {/* )} */}
         </section>
 

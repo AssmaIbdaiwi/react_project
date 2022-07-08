@@ -10,6 +10,7 @@ import axios from 'axios';
 //update function 
 
 const UpdateDataU = () => {
+    const user_id = sessionStorage.getItem('user_id');
 
     const [user, setUser] = useState({
         name: "",
@@ -20,64 +21,61 @@ const UpdateDataU = () => {
     });
 
     const SaveInfo = async (e) => {
-         e.preventDefault();
-        const user_id = sessionStorage.getItem('1');
+        e.preventDefault();
 
-        axios({
-            method: "post",
-            url: 'http://127.0.0.1:8000/api/updater/` + user_id',
-            data:user,
-        
-          }).then(res=>{
-            console.log(res)
-            alert('You have been registered successfully');
-            
-          }).catch(error=>{
-            console.log(error.response.data.message);
-          });
-        
+        // axios.patch({
+        //     // method: "post",
+        //     url: `http://127.0.0.1:8000/api/updater/+${user_id}`,
+        //     data: user
 
-        // const requestOptions =
-        // {
-        //     method: 'POST',
-        //     headers: { 'Content-Type': 'application/json' },
+        // }).then(res => {
+        //     console.log(res)
+        //     alert('You have been registered successfully');
 
-        //     body: JSON.stringify(
-        //         {
-        //             name: e.target.name.value,
-        //             email: e.target.email.value,
-        //             phone: e.target.phone.value,
-        //             age: e.target.age.value,
-        //             address: e.target.address.value
+        // }).catch(error => {
+        //     console.log(error.response.data.message);
+        // });
 
-        //         }
-        //     )
-        // }
-        // console.log(requestOptions);
 
-        // const response = await fetch(`http://127.0.0.1:8000/api/update/` + user_id, requestOptions);
+        const requestOptions =
+        {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
 
-        // if (response.ok) {
-        //     return alert('Data Updated Successfully');
-        // }
+            body: JSON.stringify(
+                {
+                    name: e.target.name.value,
+                    email: e.target.email.value,
+                    phone: e.target.phone.value,
+                    age: e.target.age.value,
+                    address: e.target.address.value
 
-        // else {
-        //     return alert('There is something wrong');
-        // }
+                }
+            )
+        }
+        console.log(requestOptions);
+
+        const response = await fetch(`http://127.0.0.1:8000/api/update/`+user_id,requestOptions);
+
+        if (response.ok) {
+            return alert('Data Updated Successfully');
+        }
+
+        else {
+            return alert('There is something wrong');
+        }
     }
 
-    // useEffect(() => {
-    //     SaveInfo();
-    // }
-    //     , []);
+    useEffect(() => {
+        SaveInfo();
+    }
+        , []);
 
 
 
     return (
 
-
         <section className="section about-section gray-bg" id="about">
-
 
 
             {/* {!isLoggedIn ? (
@@ -96,10 +94,11 @@ const UpdateDataU = () => {
 
                     <div className="col-lg-6 ">
 
-                        {/* start */}
-
                         <div id='uesrInfo' className="about-text go-to ">
-                            <form  onSubmit={SaveInfo} >
+
+                            {/* form */}
+
+                            <form action='' onSubmit={SaveInfo}>
 
                                 <div className="row about-list">
 
@@ -108,27 +107,28 @@ const UpdateDataU = () => {
                                             <label>Name</label>
                                             <input onChange={(e) =>
                                                 setUser((prev) => ({ ...prev, name: e.target.value }))}
-                                                name='name' type="text" />
-                                        </div> <br></br>
+                                                name='name' type="text" placeholder='your name' required />
+                                        </div>
+                                        <br></br>
+
                                         <div className="media">
                                             <label>Age</label>
 
                                             <input onChange={(e) =>
-                                                setUser((prev) => ({ ...prev, age: e.target.value }))} name='age' type="text" />
+                                                setUser((prev) => ({ ...prev, age: e.target.value }))} name='age' placeholder='your age' type="text" required />
                                         </div>
                                         <br></br>
+
                                         <div className="media">
                                             <label>Residence</label>
 
                                             <input onChange={(e) =>
-                                                setUser((prev) => ({ ...prev, address: e.target.value }))} name='address' type="text" />
-                                        </div> <br></br>
-                                        {/* <div className="media">
-                                    <label>Address</label>
-                                    <input id='input3' type="text"  value={'Amman, Jordan'} disabled/>
+                                                setUser((prev) => ({ ...prev, address: e.target.value }))} placeholder='Ex:Amman-jordan' name='address' type="text" required />
+                                        </div>
+                                        <br></br>
 
-                                </div> */}
                                     </div>
+
                                     <div className="col-md-7">
                                         <div className="media">
                                             <label>E-mail</label>
@@ -136,48 +136,31 @@ const UpdateDataU = () => {
                                             <input
                                                 onChange={(e) =>
                                                     setUser((prev) =>
-                                                        ({ ...prev, email: e.target.value }))} name='email' type="text"
+                                                        ({ ...prev, email: e.target.value }))} placeholder='Ex:Ahmad@mail.com' name='email' type="text"
+                                                required
                                             />
 
                                         </div> <br></br>
                                         <div className="media">
                                             <label>Phone</label>
+
                                             <input onChange={(e) =>
-                                                setUser((prev) => ({ ...prev, phone: e.target.value }))} name='phone' type="text" />
-
+                                                setUser((prev) => ({ ...prev, phone: e.target.value }))} placeholder='Ex:+962777777777' name='phone'
+                                                type="text" required />
                                         </div>
-
-
                                     </div>
-
-
                                 </div>
                                 <br></br><br></br>
-                                <input id='input7Save' type="button" className="btn btn-warning click" value={'Save'} />
+
+                                <input id='input7Save' type="submit" className="btn btn-warning click" value={'Save'} required />
                             </form>
+                            
+                             {/*end form */}
+
                         </div>
 
-                        {/* end */}
-
-                        <div id='bookings' style={{ border: '1px solid', display: 'none' }} className="counter">
-                            <div className="row">
 
 
-
-
-                                {/* API*/}
-
-                                <div className="count-data text-center">
-                                    <h6 className="count h2" data-to="500" data-speed="500">Bookings</h6>
-                                    <p className="m-0px font-w-600">
-
-
-                                    </p>
-                                </div>
-
-
-                            </div>
-                        </div>
                     </div>
 
                     <div className="col-lg-6">
@@ -211,6 +194,7 @@ const UpdateDataU = () => {
 
 
             </div>
+            <br></br>
             {/* )} */}
         </section>
 

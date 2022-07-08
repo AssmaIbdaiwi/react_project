@@ -6,7 +6,9 @@ import { userContext } from "../App";
 
 const ViewRoom = () => {
   const {userData , setUserData } = useContext(userContext)
-  const user_id = userData.id ; 
+  const user_id = userData.id ;
+console.log(user_id)
+console.log(userData)
   // const user_id = JSON.parse(localStorage.getItem('user')).id;
   const { id } = useParams();
   const [data, getFetch] = useFetch(
@@ -20,7 +22,7 @@ const ViewRoom = () => {
     dataIn: "",
     dataOut: "",
     room_id: id,
-    user_id:user_id,
+    user_id:sessionStorage.getItem('user_id'),
     total_price: "",
   });
 
@@ -52,7 +54,7 @@ const ViewRoom = () => {
         dataOut: e.target.dataOut.value,
         room_id: e.target.room_id.value,
         total_price:price,
-        user_id:user_id,
+        user_id:sessionStorage.getItem('user_id'),
       }),
     };
     console.log(requestOptions);

@@ -25,7 +25,7 @@ const Login = () => {
        .then((res) => {
         setUserData(res.data)
         if(userData){
-          sessionStorage.setItem(res.data.id , true)
+          sessionStorage.setItem('user_id' , res.data.id)
           window.location.href='http://localhost:3000/';
         }
         
@@ -37,7 +37,7 @@ const Login = () => {
    };
 
 
-   
+   console.log(userData)
   return (
     <>
       <section className="vh-100 mt-5">

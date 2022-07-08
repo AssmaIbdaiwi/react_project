@@ -1,14 +1,16 @@
 import React from "react";
 import { useState} from "react";
-import axios from 'axios'
+import axios from 'axios';
+import {useNavigate} from 'react-router-dom'
 const Register = () => {
-
+const navigate = useNavigate();
     const [user, setUser] = useState({
      name: "",
      phone: "",
      email:"",
      pass:"",
     });
+const [error,setError] = useState([]);
 const handleSubmit =(e)=> {
   e.preventDefault();
   
@@ -19,10 +21,16 @@ const handleSubmit =(e)=> {
 
   }).then(res=>{
     console.log(res)
-    alert('You have been registered successfully');
-     window.location.href = "http://localhost:3000/login";
+    if(res.data.errors){
+  setError(res.data.errors)
+    }
+    else{
+     navigate('/login')
+    }
+  
   }).catch(error=>{
     console.log(error.response.data.message);
+    
   });
 }
 
@@ -37,7 +45,8 @@ const handleSubmit =(e)=> {
                 style={{ borderRadius: "1rem" }}
               >
                 <div className="card-body p-5 text-center">
-                  <h3 className="mb-5">Sign in</h3>
+                  <h3 className="mb-5">Sign Up</h3>
+                  <div style={{color:'red'}}>{error[0]}</div>
                   <form
                     action="#"
                     onSubmit={handleSubmit}
@@ -47,6 +56,7 @@ const handleSubmit =(e)=> {
                       <label className="form-label" for="typeEmailX-2">
                         Name
                       </label>
+
                       <input
                         onChange={(e) =>
                           setUser((prev) => ({ ...prev, name: e.target.value }))
@@ -56,12 +66,11 @@ const handleSubmit =(e)=> {
                         className="form-control form-control-lg"
                         name="name"
                         value={user.name}
-                        required
                       />
                     </div>
 
                     <div className="form-outline mb-4">
-                    <label className="form-label" for="typeEmailX-2">
+                      <label className="form-label" for="typeEmailX-2">
                         Email
                       </label>
                       <input
@@ -76,13 +85,11 @@ const handleSubmit =(e)=> {
                         }
                         name="email"
                         value={user.email}
-                        required
                       />
-                     
                     </div>
 
                     <div className="form-outline mb-4">
-                    <label className="form-label" for="typeEmailX-2">
+                      <label className="form-label" for="typeEmailX-2">
                         Phone
                       </label>
                       <input
@@ -97,13 +104,11 @@ const handleSubmit =(e)=> {
                         }
                         name="phone"
                         value={user.phone}
-                        required
                       />
-                     
                     </div>
 
                     <div className="form-outline mb-4">
-                    <label className="form-label" for="typePasswordX-2">
+                      <label className="form-label" for="typePasswordX-2">
                         Password
                       </label>
                       <input
@@ -115,20 +120,16 @@ const handleSubmit =(e)=> {
                         }
                         name="pass"
                         value={user.pass}
-                        required
                         type="password"
                         id="typePasswordX-2"
                         className="form-control form-control-lg"
                       />
-                     
                     </div>
-
-
 
                     <button
                       className="btn btn-primary btn-lg btn-block"
                       type="submit"
-                      style={{backgroundColor:"#f3c300"}}
+                      style={{ backgroundColor: "#f3c300" }}
                     >
                       Register
                     </button>

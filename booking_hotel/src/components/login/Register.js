@@ -19,6 +19,8 @@ const handleSubmit =(e)=> {
 
   }).then(res=>{
     console.log(res)
+    alert('You have been registered successfully');
+    
   }).catch(error=>{
     console.log(error.response.data.message);
   });

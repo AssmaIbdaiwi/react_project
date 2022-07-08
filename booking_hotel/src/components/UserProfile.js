@@ -27,14 +27,14 @@ function Info() {
 
 const Mybookings = () => {
     //API 
+    document.getElementById('bookings').style.display = 'block';
+
     document.getElementById('input8Show').style.display = 'none';
     document.getElementById('info').style.display = 'block';
 
     document.getElementById('uesrInfo').style.display = 'none';
 
-    document.getElementById('bookings').style.display = 'block';
     document.getElementById('input6').style.display = 'none';
-    document.getElementById('bookings').style.display = 'block';
 
     document.getElementById('input7Save').style.display = 'none';
 
@@ -60,25 +60,24 @@ const UserProfile = () => {
     const [data, setData] = useState({});
 
 
+
+    const fetchProfile = async () => {
+        const response = await fetch('http://127.0.0.1:8000/api/users/1')
+        const myProfile = await response.json();
+       
+        setData(myProfile);
+        console.log(myProfile)
+
+    }
+
+    //view user bookings
     // let { id } = useParams();
 
-    // const fetchProfile = async () => {
-    //     const response = await fetch('http://127.0.0.1:8000/api/users/1')
-    //     const myProfile = await response.json();
-       
-    //     setData(myProfile);
-    //     console.log(myProfile)
 
-    // }
-
-    // //view user bookings
-    // // let { id } = useParams();
-
-
-    // useEffect(() => {
-    //     fetchProfile();
-    // }
-    //     , []);
+    useEffect(() => {
+        fetchProfile();
+    }
+        , []);
 
 
         const [ bookings, setBookings ] = useState({});
@@ -97,7 +96,7 @@ const UserProfile = () => {
        }
            , []);
 
-           console.log(bookings)
+        //    console.log(bookings)
 
     return (
 

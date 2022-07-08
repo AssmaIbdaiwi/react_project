@@ -29,7 +29,8 @@ const Navbar =()=>{
                             <li className="nav-item"><NavLink className="nav-link" to="/about">About us</NavLink></li>
                             <li className="nav-item"><NavLink className="nav-link" to="/rooms">Rooms</NavLink></li>
 
-                            <li className="nav-item"><NavLink className="nav-link" to="/">Gallery</NavLink></li>
+                              <li className="nav-item"><NavLink className="nav-link" to="/contact">Contact</NavLink></li>
+                            
                             {user_id ==null?(
                                 <>
                                 <li className="nav-item"><NavLink className="nav-link" to="/login">Login</NavLink></li>
@@ -43,7 +44,7 @@ const Navbar =()=>{
                             )}
 
 
-                            <li className="nav-item"><NavLink className="nav-link" to="/contact">Contact</NavLink></li>
+                          
                         </ul>
                     </div> 
                 </nav>

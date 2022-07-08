@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import { userContext } from "../App";
 
@@ -72,7 +72,7 @@ console.log(userData)
       // window.location.href = "http://localhost:3000/";
     }
   };
-  // console.log(book)
+  const user_id_session = sessionStorage.getItem('user_id')
   return (
     <>
       {/* //// */}
@@ -228,10 +228,19 @@ console.log(userData)
                     </div>
 
                     <div className="form-btn">
+                      { user_id_session == null ?(
+                        <>
+                        <br/>
+                          <h4 >PLease click here to<Link to='/login' style={{color:"#f3c300"}} > Login</Link> </h4> 
+                        </>
+                      ):(
+                        <>
                       <button className="book_now_btn button_hover">
-                        {" "}
-                        Check availability{" "}
+                        Check availability
                       </button>
+                        </>
+                      )}
+
                     </div>
                   </form>
                 </div>

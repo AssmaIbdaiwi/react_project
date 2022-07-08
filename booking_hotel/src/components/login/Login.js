@@ -98,7 +98,7 @@ const Login = () => {
 
                     <button
                       className="btn btn-primary btn-lg btn-block"
-                      type="submit">
+                      type="submit" style={{backgroundColor:"#f3c300"}}>
                       Login
                     </button>
                   </form>

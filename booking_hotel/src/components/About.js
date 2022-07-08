@@ -36,7 +36,7 @@ const About =()=>{
                 <div className="row mb_30">
                     <div className="col-lg-4 col-md-6">
                         <div className="facilities_item">
-                            <h4 className="sec_h4"><i className="lnr lnr-dinner"></i>Khaled Bani Amer</h4>
+                            <h4 className="sec_h4"><i className="lnr lnr-bicycle"></i>Khaled Bani Amer</h4>
                           
                         </div>
                     </div>
@@ -48,19 +48,19 @@ const About =()=>{
                     </div>
                     <div className="col-lg-4 col-md-6">
                         <div className="facilities_item">
-                            <h4 className="sec_h4"><i className="lnr lnr-shirt"></i>Sojoud Mohammad</h4>
+                            <h4 className="sec_h4"><i className="lnr lnr-bicycle"></i>Sojoud Mohammad</h4>
                            
                         </div>
                     </div>
                     <div className="col-lg-4 col-md-6">
                         <div className="facilities_item">
-                            <h4 className="sec_h4"><i className="lnr lnr-car"></i>Asma Ibdawi</h4>
+                            <h4 className="sec_h4"><i className="lnr lnr-bicycle"></i>Asma Ibdawi</h4>
                           
                         </div>
                     </div>
                     <div className="col-lg-4 col-md-6">
                         <div className="facilities_item">
-                            <h4 className="sec_h4"><i className="lnr lnr-construction"></i>Ahmad Khalaf</h4>
+                            <h4 className="sec_h4"><i className="lnr lnr-bicycle"></i>Ahmad Khalaf</h4>
                            
                         </div>
                     </div>

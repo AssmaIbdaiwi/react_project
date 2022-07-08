@@ -5,14 +5,14 @@ import { userContext } from "../App";
 
 
 const ViewRoom = () => {
-
+  const { id } = useParams();
   ///////////comment
 
-  const [comment, getCommentFetch] = useFetch("http://127.0.0.1:8000/api/apicomment");
+  const [comment, getCommentFetch] = useFetch("http://127.0.0.1:8000/api/apicomment/"+id);
   useEffect(() => {
     getCommentFetch();
   }, []);
-
+  const [update , setUpdated] = useState(false);
   const [com, setCom] = useState({
     subject: "",
     room_id_comment: id,
@@ -32,21 +32,17 @@ const ViewRoom = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           subject: e.target.subject.value,
-          room_id_comment: e.target.room_id.value,
+          room_id_comment: id,
           user_id_comment: sessionStorage.getItem("user_id"),
         }),
       };
-                  const response = await fetch(
-                    "http://127.0.0.1:8000/api/addcomment",
-                    requestOptions
-                  );
+    const response = await fetch("http://127.0.0.1:8000/api/addComment",requestOptions);
 
-      console.log(requestOptions);
 
 
 
       if (response.ok) {
-        alert("Book Successfully");
+        alert("comment added Successfully");
       } else {
         alert("There is something wrong");
       }
@@ -55,10 +51,9 @@ const ViewRoom = () => {
   ///////////end comment///////////
   const {userData , setUserData } = useContext(userContext)
   const user_id = userData.id ;
-console.log(user_id)
-console.log(userData)
+
   // const user_id = JSON.parse(localStorage.getItem('user')).id;
-  const { id } = useParams();
+
 
   const [data, getFetch] = useFetch(
     "http://127.0.0.1:8000/api/getsingle/" + id
@@ -305,23 +300,16 @@ console.log(userData)
           <div class="d-flex flex-column col-md-8">
             <div class="coment-bottom bg-white p-2 px-4">
               <div class="d-flex flex-row add-comment-section mt-4 mb-4">
+
+                {sessionStorage.getItem('user_id') != null ? (
+                  <>
                 <img
                   class=" img-responsive rounded-circle mr-2"
                   src="https://goodsamjc.org/wp-content/uploads/2020/01/16196015_10154888128487744_6901111466535510271_n.png"
                   width={38}
                 />
                 <form onSubmit={saveComment}>
-                  <input
-                    type="hidden"
-                    name="user_id"
-                    onChange={handleComment}
-                  />
-                  <input
-                    type="hidden"
-                    name="room_id"
-                    onChange={handleComment}
-                    value={com.room_id}
-                  />
+               
                   <input
                     type="text"
                     class="form-control mr-3"
@@ -330,25 +318,35 @@ console.log(userData)
                     onChange={handleComment}
                     value={com.subject}
                   />
-                  <button class="btn btn-primary" type="button">
+                  <button  class="btn btn-primary" type="submit">
                     Comment
                   </button>
                 </form>
-              </div>
-              <div class="commented-section mt-2">
+                <div class="commented-section mt-2">
                 <div class="d-flex flex-row align-items-center commented-user">
                   <h5 class="mr-2">name</h5>
                   <span class="dot mb-1"></span>
                 </div>
-
+                  </div>
+                  <br />
+                  <br />
+                  <div>
                 {comment.map((comments) => {
                   return (
                     <div class="comment-text-sm">
+                      <h4>{comments.name}</h4>
                       <span>{comments.subject}</span>
                     </div>
                   );
                 })}
+                </div>
+                  </>
+                ):(
+                  <a></a>
+                )}
+                
               </div>
+
             </div>
           </div>
         </div>

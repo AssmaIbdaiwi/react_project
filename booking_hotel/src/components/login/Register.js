@@ -61,6 +61,9 @@ const handleSubmit =(e)=> {
                     </div>
 
                     <div className="form-outline mb-4">
+                    <label className="form-label" for="typeEmailX-2">
+                        Email
+                      </label>
                       <input
                         type="text"
                         id="typeEmailX-2"
@@ -75,12 +78,13 @@ const handleSubmit =(e)=> {
                         value={user.email}
                         required
                       />
-                      <label className="form-label" for="typeEmailX-2">
-                        Email
-                      </label>
+                     
                     </div>
 
                     <div className="form-outline mb-4">
+                    <label className="form-label" for="typeEmailX-2">
+                        Phone
+                      </label>
                       <input
                         type="text"
                         id="typeEmailX-2"
@@ -95,12 +99,13 @@ const handleSubmit =(e)=> {
                         value={user.phone}
                         required
                       />
-                      <label className="form-label" for="typeEmailX-2">
-                        Phone
-                      </label>
+                     
                     </div>
 
                     <div className="form-outline mb-4">
+                    <label className="form-label" for="typePasswordX-2">
+                        Password
+                      </label>
                       <input
                         onChange={(e) =>
                           setUser((prev) => ({
@@ -115,9 +120,7 @@ const handleSubmit =(e)=> {
                         id="typePasswordX-2"
                         className="form-control form-control-lg"
                       />
-                      <label className="form-label" for="typePasswordX-2">
-                        Password
-                      </label>
+                     
                     </div>
 
 

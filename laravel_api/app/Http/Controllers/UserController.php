@@ -33,7 +33,7 @@ class UserController extends Controller
     {
 
 
-        $user=User::findOrfail($id);
+        $user=User::find($id);
 
         $user->update([
         'name'=>$request->input('name'),

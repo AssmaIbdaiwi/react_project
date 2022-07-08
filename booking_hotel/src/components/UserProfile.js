@@ -257,7 +257,7 @@ const UserProfile = () => {
 
 
 
-
+{/* 
                                     <table className="table mt-5">
                                         <thead>
                                             <tr>
@@ -282,7 +282,7 @@ const UserProfile = () => {
                                                 );
                                             })}
                                         </tbody>
-                                    </table>
+                                    </table> */}
 
 
 

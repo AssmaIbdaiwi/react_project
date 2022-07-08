@@ -295,51 +295,45 @@ const ViewRoom = () => {
       </div>
 
       {/* comments */}
-      <div class="container mt-5 mb-5">
+      <div class="container mb-5">
         <div class="d-flex row">
-          <div class="d-flex flex-column col-md-8">
-            <div class="coment-bottom bg-white p-2 px-4">
-              <div class="d-flex flex-row add-comment-section mt-4 mb-4">
+          <div class="d-flex flex-column col-md-10">
+            <div class="coment-bottom bg-white ">
+              <div class="d-flex flex-row add-comment-section ">
 
                 {sessionStorage.getItem('user_id') != null ? (
                   <>
-                <img
+                {/* <img
                   class=" img-responsive rounded-circle mr-2"
                   src="https://goodsamjc.org/wp-content/uploads/2020/01/16196015_10154888128487744_6901111466535510271_n.png"
                   width={38}
-                />
+                /> */}
                 <form onSubmit={saveComment}>
-               
+                <div class="d-flex flex-row ">
+                  <h5 class="m-2">name</h5>
+                  
+                </div>
                   <input
                     type="text"
-                    class="form-control mr-3"
+                    class="form-control m-2"
                     name="subject"
                     placeholder="Add comment"
                     onChange={handleComment}
                     value={com.subject}
                   />
-                  <button  class="btn btn-primary" type="submit">
+                  <button  class="btn btn-primary m-2" type="submit">
                     Comment
                   </button>
                 </form>
                 <div class="commented-section mt-2">
-                <div class="d-flex flex-row align-items-center commented-user">
-                  <h5 class="mr-2">name</h5>
-                  <span class="dot mb-1"></span>
-                </div>
+
                   </div>
                   <br />
                   <br />
                   <div>
-                {comment.map((comments) => {
-                  return (
-                    <div class="comment-text-sm">
-                      <h4>{comments.name}</h4>
-                      <span>{comments.subject}</span>
-                    </div>
-                  );
-                })}
                 </div>
+                
+
                   </>
                 ):(
                   <a></a>
@@ -351,6 +345,16 @@ const ViewRoom = () => {
           </div>
         </div>
       </div>
+      {comment.map((comments) => {
+                  return (
+                    
+                    <div className="container mt-3" >
+                      <h4>{comments.name}</h4>
+                      <div>{comments.subject}</div>
+                      <br />
+                    </div>
+                  );
+                })}
     </>
   );
 };

@@ -9,13 +9,15 @@ const About =()=>{
                 <div className="row">
                     <div className="col-md-6 d_flex align-items-center">
                         <div className="about_content ">
-                            <h2 className="title title_color">About Us <br/>Our History<br/>Mission & Vision</h2>
-                            <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that, as women, our behavior on the job is beyond reproach. inappropriate behavior is often laughed.</p>
-                            <a href="#" className="button_hover theme_btn_two">Request Custom Price</a>
+                            <h2 className="title title_color">About Us </h2>
+                            <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that, as women, our behavior on the job is beyond reproach. inappropriate behavior is often laughed.
+                            launched the brand by using magazines as inspirations for its hotels. It wasn’t overt or schlocky—covers of the magazines weren’t hanging in the lobby—but Conley and his design teams used the publications as their muse in defining the product, its vibe, food-and-beverage offerings and, most of all, its style of service.
+                            </p>
+                            
                         </div>
                     </div>
                     <div className="col-md-6">
-                        <img className="img-fluid" src="assets/image/about_bg.jpg" alt="img" />
+                        <img className="img-fluid" src="https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/itemimages/10/01/100160_v4.jpeg" alt="img" />
                     </div>
                 </div>
             </div>
@@ -28,46 +30,41 @@ const About =()=>{
             </div>
             <div className="container">
                 <div className="section_title text-center">
-                    <h2 className="title_w">Royal Facilities</h2>
-                    <p>Who are in extremely love with eco friendly system.</p>
+                    <h2 className="title_w">Team</h2>
+            
                 </div>
                 <div className="row mb_30">
                     <div className="col-lg-4 col-md-6">
                         <div className="facilities_item">
-                            <h4 className="sec_h4"><i className="lnr lnr-dinner"></i>Restaurant</h4>
-                            <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+                            <h4 className="sec_h4"><i className="lnr lnr-bicycle"></i>Khaled Bani Amer</h4>
+                          
                         </div>
                     </div>
                     <div className="col-lg-4 col-md-6">
                         <div className="facilities_item">
-                            <h4 className="sec_h4"><i className="lnr lnr-bicycle"></i>Sports CLub</h4>
-                            <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+                            <h4 className="sec_h4"><i className="lnr lnr-bicycle"></i>Safa' Alyaaqbeh</h4>
+                           
                         </div>
                     </div>
                     <div className="col-lg-4 col-md-6">
                         <div className="facilities_item">
-                            <h4 className="sec_h4"><i className="lnr lnr-shirt"></i>Swimming Pool</h4>
-                            <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+                            <h4 className="sec_h4"><i className="lnr lnr-bicycle"></i>Sojoud Mohammad</h4>
+                           
                         </div>
                     </div>
                     <div className="col-lg-4 col-md-6">
                         <div className="facilities_item">
-                            <h4 className="sec_h4"><i className="lnr lnr-car"></i>Rent a Car</h4>
-                            <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+                            <h4 className="sec_h4"><i className="lnr lnr-bicycle"></i>Asma Ibdawi</h4>
+                          
                         </div>
                     </div>
                     <div className="col-lg-4 col-md-6">
                         <div className="facilities_item">
-                            <h4 className="sec_h4"><i className="lnr lnr-construction"></i>Gymnesium</h4>
-                            <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+                            <h4 className="sec_h4"><i className="lnr lnr-bicycle"></i>Ahmad Khalaf</h4>
+                           
                         </div>
                     </div>
-                    <div className="col-lg-4 col-md-6">
-                        <div className="facilities_item">
-                            <h4 className="sec_h4"><i className="lnr lnr-coffee-cup"></i>Cofee</h4>
-                            <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </section>
@@ -81,7 +78,7 @@ const About =()=>{
                     <div className="media testimonial_item">
                         <img className="rounded-circle" src="assets/image/testtimonial-1.jpg" alt="" />
                         <div className="media-body">
-                            <p>As conscious traveling Paupers we must always be concerned about our dear Mother Earth. If you think about it, you travel across her face, and She is the </p>
+                           
                             <a href="#"><h4 className="sec_h4">Fanny Spencer</h4></a>
                             <div className="star">
                                 <a href="#"><i className="fa fa-star"></i></a>

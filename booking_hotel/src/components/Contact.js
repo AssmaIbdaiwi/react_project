@@ -76,7 +76,11 @@ const Contact = () => {
                         </form>
                     </div>
                 </div>
+            </div>  
+            <div className="container-faild mt-100" style={{    marginTop: '35px'}}>
+               <img  src="./assets/image/instagram/map.png" alt="img" />
             </div>
+
         </section>
         {/* <!--================Contact Area =================--> */}
 

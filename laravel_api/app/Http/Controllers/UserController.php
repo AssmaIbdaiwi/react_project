@@ -23,7 +23,7 @@ class UserController extends Controller
     // }
     public  function getInfo($id)
     {
-        
+
         $data = User::find($id);
         // $data = User::all();
         return $data;
@@ -32,11 +32,11 @@ class UserController extends Controller
     public function update(Request $request,$id)
     {
 
-      
+
         $user=User::findOrfail($id);
-        
+
         $user->update([
-            'name'=>$request->input('name'),
+        'name'=>$request->input('name'),
         'email'=>$request->input('email'),
         'age'=>$request->input('age'),
         'address'=>$request->input('address'),

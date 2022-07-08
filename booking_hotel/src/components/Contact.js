@@ -3,9 +3,7 @@ import React from 'react';
 const Contact = () => {
     return (
     <>
-
-
-        
+  
         {/* <!--================Breadcrumb Area =================--> */}
         <section className="breadcrumb_area">
             <div className="overlay bg-parallax" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background=""></div>
@@ -32,6 +30,8 @@ const Contact = () => {
                     data-mlat="40.701083"
                     data-mlon="-74.1522848">
                 </div> */}
+
+
                 <div className="row">
                     <div className="col-md-3">
                         <div className="contact_info">

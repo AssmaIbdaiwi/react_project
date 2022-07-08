@@ -17,7 +17,7 @@ const SaveInfo = async () => {
   
     // setUserData(JSON.parse(localStorage.getItem('user'))).id;
 
-   const res = await fetch(`http://127.0.0.1:8000/api/users/1`);
+   const res = await fetch(`http://127.0.0.1:8000/api/update/1`);
 
     const newData = await res.json();
     const saveData = async (e) => {
@@ -49,6 +49,8 @@ const SaveInfo = async () => {
           return  alert('There is something wrong');
         }
     }
+    saveData();
+
     useEffect(() => {
         saveData();
      }
@@ -137,7 +139,7 @@ const UpdateDataU = () => {
                         {/* start */}
 
                         <div id='uesrInfo' className="about-text go-to ">
-                            <form action='' method='post'>                  
+                            <form onSubmit={SaveInfo} >                  
                                 <div className="row about-list">
                                    
                                     <div className="col-md-7">
@@ -179,7 +181,7 @@ const UpdateDataU = () => {
 
                                 </div>
                                 <br></br><br></br>
-                                <input  onClick={SaveInfo} id='input7Save' type="button" className="btn btn-warning click" value={'Save'} />
+                                <input   id='input7Save' type="button" className="btn btn-warning click" value={'Save'} />
                             </form>
                         </div>
 

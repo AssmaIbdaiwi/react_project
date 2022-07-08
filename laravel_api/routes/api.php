@@ -10,7 +10,10 @@ use App\Models\User;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 Route::get('users/{id}',[UserController::class , 'getInfo']);
+Route::get('update/{id}',[UserController::class , 'update']);
+Route::get('books/{id}',[BookController::class , 'getInfoBook']);
 
 Route::get('apirooms',[RoomController::class , 'RoomAPI']);
 Route::get('apicomment',[CommentController::class , 'CommentAPI']);

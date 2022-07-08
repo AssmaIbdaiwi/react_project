@@ -11,7 +11,7 @@ import Login from "./components/login/Login";
 import About from './components/About';
 import Contact from './components/Contact';
 import { createContext, useState } from 'react';
-
+import UpdateDataU from './components/UpdateDataU';
 export const userContext = createContext();
 
 
@@ -35,6 +35,7 @@ function App() {
 
         <Routes>
           <Route path="/rooms" element={<Rooms />} />
+          <Route path="/back" element={<UserProfile />} />
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
@@ -42,6 +43,8 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/ViewRoom/:id" element={<ViewRoom />} />
           <Route path="/UserProfile" element={<UserProfile />} />
+          <Route path="/edit" element={<UpdateDataU />} />
+
         </Routes>
         <Footer />
       </userContext.Provider>

@@ -14,10 +14,9 @@ const ViewRoom = () => {
   }, []);
 
   const [com, setCom] = useState({
-    subject:'',
+    subject: "",
     room_id_comment: id,
-    user_id_comment: user_id,
-
+    user_id_comment: sessionStorage.getItem("user_id"),
   });
   const handleComment = (e) => {
     setCom({
@@ -33,8 +32,8 @@ const ViewRoom = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           subject: e.target.subject.value,
-          room_id_comment: e.target.room_id_comment.value,
-          user_id_comment: e.target.user_id_comment.value,
+          room_id_comment: e.target.room_id.value,
+          user_id_comment: sessionStorage.getItem("user_id"),
         }),
       };
                   const response = await fetch(
@@ -54,9 +53,11 @@ const ViewRoom = () => {
     };
 
   ///////////end comment///////////
-
-  const { userData, setUserData } = useContext(userContext);
-  const user_id = userData.id;
+  const {userData , setUserData } = useContext(userContext)
+  const user_id = userData.id ;
+console.log(user_id)
+console.log(userData)
+  // const user_id = JSON.parse(localStorage.getItem('user')).id;
   const { id } = useParams();
 
   const [data, getFetch] = useFetch(
@@ -70,7 +71,7 @@ const ViewRoom = () => {
     dataIn: "",
     dataOut: "",
     room_id: id,
-    user_id: user_id,
+    user_id:sessionStorage.getItem('user_id'),
     total_price: "",
   });
 
@@ -101,8 +102,8 @@ const ViewRoom = () => {
         dataIn: e.target.dataIn.value,
         dataOut: e.target.dataOut.value,
         room_id: e.target.room_id.value,
-        total_price: price,
-        user_id: user_id,
+        total_price:price,
+        user_id:sessionStorage.getItem('user_id'),
       }),
     };
     console.log(requestOptions);

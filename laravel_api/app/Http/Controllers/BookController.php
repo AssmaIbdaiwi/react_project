@@ -9,6 +9,15 @@ use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
+    public  function getInfoBook($id)
+    {
+        $data = Book::where('user_id',$id)->get();
+
+        // $data = Book::find($id);
+        // $data = User::all();
+        return $data;
+    }
+    
     public function addBook(Request $request)
     {
 

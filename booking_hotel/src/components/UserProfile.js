@@ -4,6 +4,7 @@ import './userProfile.css';
 import { ProfileContext } from "./ProfileContext";
 import { useContext } from "react";
 import UpdateData from './UpdateDataU';
+import useFetch from '../hooks/useFetch';
 
 function Info() {
     //API 
@@ -28,13 +29,20 @@ function Info() {
 const Mybookings = () => {
     //API 
     document.getElementById('bookings').style.display = 'block';
+<<<<<<< HEAD
 
+=======
+>>>>>>> e1145f7ca018c7085fc090155b60e694fb8b755f
     document.getElementById('input8Show').style.display = 'none';
     document.getElementById('info').style.display = 'block';
 
     document.getElementById('uesrInfo').style.display = 'none';
 
     document.getElementById('input6').style.display = 'none';
+<<<<<<< HEAD
+=======
+
+>>>>>>> e1145f7ca018c7085fc090155b60e694fb8b755f
 
     document.getElementById('input7Save').style.display = 'none';
 
@@ -54,7 +62,7 @@ const UserProfile = () => {
     
     // const { isLoggedIn } = useContext(ProfileContext);
 
-    
+    const user_id = sessionStorage.getItem('user_id');
 
     //view user info
     const [data, setData] = useState({});
@@ -79,24 +87,34 @@ const UserProfile = () => {
     }
         , []);
 
-
-        const [ bookings, setBookings ] = useState({});
+        const [bookingData , getFetch] = useFetch("http://127.0.0.1:8000/api/books/"+user_id);
+        // const [ bookings, setBookings ] = useState([]);
 
 
        useEffect(() => {
-        
-       const fetchBookings = async () => {
-        const ress = await fetch('http://127.0.0.1:8000/api/books/1')
-        const myBookingss= await ress.json();
-        setBookings(myBookingss);
-
-
+        getFetch()
     }
-    fetchBookings();
-       }
+
+       
            , []);
 
+<<<<<<< HEAD
         //    console.log(bookings)
+=======
+    console.log(bookingData)
+
+     const userBookings = bookingData.map((book)=>{
+        return (
+            <tr>
+                <td>{book.id}</td>
+                <td>{book.checkIn}</td>
+                <td>{book.checkOut}</td>
+                <td>{book.total_price}</td>
+                
+            </tr>
+        )
+     })      
+>>>>>>> e1145f7ca018c7085fc090155b60e694fb8b755f
 
     return (
 
@@ -185,10 +203,10 @@ const UserProfile = () => {
 
                                     </p> */}
 
+                                        
 
 
 
-{/* 
                                     <table className="table mt-5">
                                         <thead>
                                             <tr>
@@ -199,21 +217,10 @@ const UserProfile = () => {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {bookings.map((user) => {
-                                                return (
-
-                                                    <tr key={user.id}>
-                                                        <td>{i++}</td>
-                                                        <td>{bookings.checkIn }</td>
-                                                        <td>{bookings.checkOut }</td>
-                                                        <td>{ bookings.total_price}</td>
-
-                                                    </tr>
-
-                                                );
-                                            })}
+                                    {userBookings}                                        
+                          
                                         </tbody>
-                                    </table> */}
+                                    </table>
 
 
 

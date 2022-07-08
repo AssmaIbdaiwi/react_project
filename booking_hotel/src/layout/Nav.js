@@ -12,7 +12,11 @@ const Navbar =()=>{
             <div className="container">
                 <nav className="navbar navbar-expand-lg navbar-light">
                    
+<<<<<<< HEAD
                     <NavLink  className="navbar-brand logo_h" to="index.html"><img src="assets/image/Logo.png" alt=""/></NavLink>
+=======
+                    <NavLink className="navbar-brand logo_h" to="index.html"><img height={50} src={"assets/image/logo.png"} alt="logo"  /></NavLink>
+>>>>>>> a2512899f4fc71791d675dd5174a4d2ae1cd9210
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="icon-bar"></span>
                         <span className="icon-bar"></span>
@@ -24,6 +28,7 @@ const Navbar =()=>{
                             <li className="nav-item"><NavLink  className="nav-link" to="/">Home</NavLink></li> 
                             <li className="nav-item"><NavLink className="nav-link" to="/about">About us</NavLink></li>
                             <li className="nav-item"><NavLink className="nav-link" to="/rooms">Rooms</NavLink></li>
+<<<<<<< HEAD
                             <li className="nav-item"><NavLink className="nav-link" to="/">Gallery</NavLink></li>
                             {user_id ==null?(
                                 <>
@@ -39,6 +44,10 @@ const Navbar =()=>{
 
 
 
+=======
+                            <li className="nav-item"><NavLink className="nav-link" to="/login">Login</NavLink></li>
+                            <li className="nav-item"><NavLink className="nav-link" to="/register">Signup</NavLink></li>
+>>>>>>> a2512899f4fc71791d675dd5174a4d2ae1cd9210
                             <li className="nav-item"><NavLink className="nav-link" to="/contact">Contact</NavLink></li>
                         </ul>
                     </div> 

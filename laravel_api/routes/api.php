@@ -9,7 +9,9 @@ use App\Models\User;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 Route::get('users/{id}',[UserController::class , 'getInfo']);
+Route::get('books/{id}',[BookController::class , 'getInfoBook']);
 
 Route::get('apirooms',[RoomController::class , 'RoomAPI']);
 Route::post('addbook',[BookController::class , 'addBook']);

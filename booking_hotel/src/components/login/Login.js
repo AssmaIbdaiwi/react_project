@@ -20,13 +20,14 @@ const Login = () => {
      axios({
        method: "post",
        url: "http://localhost:8000/api/login",
-       data: user,
+       data: user
      })
        .then((res) => {
         setUserData(res.data)
         if(userData){
-          sessionStorage.setItem('user_id' , res.data.id)
+          sessionStorage.setItem('user_id' , res.data.id);
           window.location.href='http://localhost:3000/';
+          
         }
         
 

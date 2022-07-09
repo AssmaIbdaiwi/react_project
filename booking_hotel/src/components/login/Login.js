@@ -3,9 +3,10 @@ import "./css/style.css";
 import {useState } from "react";
 import axios from "axios";
 import { userContext } from "../../App";
-
+import { useNavigate } from "react-router-dom";
 const Login = () => {
-  
+  const navigate = useNavigate();
+
   const {userData , setUserData } = useContext(userContext)
   
   const [user, setUser] = useState({
@@ -13,6 +14,8 @@ const Login = () => {
     pass: "",
     
   });
+
+  const [error,setError] = useState([])
 
    const handleSubmit = (e) => {
      e.preventDefault();
@@ -24,13 +27,23 @@ const Login = () => {
      })
        .then((res) => {
         setUserData(res.data)
+<<<<<<< HEAD
         if(userData){
           sessionStorage.setItem('user_id' , res.data.id);
           window.location.href='http://localhost:3000/';
           
         }
         
+=======
+>>>>>>> ed88ffaaada0d84cd9236ec9c50e12a38054f063
 
+      if (res.data.errors) {
+        setError(res.data.errors);
+      } else {
+        sessionStorage.setItem("user_id", res.data.id);
+           navigate("/");
+      }
+      
        }) 
        .catch((error) => {
          console.log(error.response.data.message);
@@ -50,15 +63,15 @@ const Login = () => {
                 style={{ borderRadius: "1rem" }}
               >
                 <div className="card-body p-5 text-center">
-                  <h3 className="mb-5">Sign in</h3>
+                  <h3 className="mb-5">Sign In</h3>
+                  <div style={{ color: "red" }}>{error[0]}</div>
                   <form
                     action="#"
                     onSubmit={handleSubmit}
                     classNameName="signin-form"
                   >
-                
                     <div className="form-outline mb-4">
-                    <label className="form-label" for="typeEmailX-2">
+                      <label className="form-label" for="typeEmailX-2">
                         Email
                       </label>
                       <input
@@ -75,11 +88,10 @@ const Login = () => {
                         value={user.email}
                         required
                       />
-                     
                     </div>
 
                     <div className="form-outline mb-4">
-                    <label className="form-label" for="typePasswordX-2">
+                      <label className="form-label" for="typePasswordX-2">
                         Password
                       </label>
                       <input
@@ -96,12 +108,13 @@ const Login = () => {
                         id="typePasswordX-2"
                         className="form-control form-control-lg"
                       />
-                    
                     </div>
 
                     <button
                       className="btn btn-primary btn-lg btn-block"
-                      type="submit" style={{backgroundColor:"#f3c300"}}>
+                      type="submit"
+                      style={{ backgroundColor: "#f3c300" }}
+                    >
                       Login
                     </button>
                   </form>

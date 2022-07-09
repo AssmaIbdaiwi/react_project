@@ -194,7 +194,7 @@ const Home = () => {
           <div className="row">
             <div className="col-md-6 d_flex align-items-center">
               <div className="about_content ">
-                <h2 className="title title_color">Mission & Vision about us</h2>
+                <h2 className="title title_color">Mission & Vision </h2>
                 <p>
                   Conf deluxe is a five-star deluxe luxury hotel with a
                   prestigious address next to the Fifth Circle of Amman,

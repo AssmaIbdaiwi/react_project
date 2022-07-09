@@ -52,10 +52,10 @@ const Rooms =()=>{
             <div className="overlay bg-parallax" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background=""></div>
             <div className="container">
                 <div className="page-cover text-center">
-                    <h2 className="page-cover-tittle">Accomodation</h2>
+                    <h2 className="page-cover-tittle">Rooms</h2>
                     <ol className="breadcrumb">
-                        <li><a href="index.html">Home</a></li>
-                        <li className="active">Accomodation</li>
+                        <li><a href="/">Home</a></li>
+                        <li className="active">Rooms</li>
                     </ol>
                 </div>
             </div>

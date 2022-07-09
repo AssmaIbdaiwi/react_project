@@ -67,7 +67,7 @@ const Footer =()=>{
             </div>
             <div className="border_line"></div>
             <div className="row footer-bottom d-flex justify-content-between align-items-center">
-                <p className="col-lg-8 col-sm-12 footer-text m-0">Copyright &copy;</p>
+                <p className="col-lg-8 col-sm-12 footer-text m-0">Copyright &copy; by S_K_A</p>
                 <div className="col-lg-4 col-sm-12 footer-social">
                     <NavLink to="#"><i className="fa fa-facebook"></i></NavLink>
                     <NavLink to="#"><i className="fa fa-twitter"></i></NavLink>

@@ -1,7 +1,7 @@
 function Notfound(){
     return(
         <div>
-            <h1>not found 404</h1>
+            <h1>page not found-404</h1>
         </div>
     )
 }

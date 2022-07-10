@@ -40,13 +40,13 @@ const UserProfile = () => {
 
     }
 
-    //view user bookings
 
 
     useEffect(() => {
         fetchProfile();
     }
         , []);
+    //view user bookings
 
     const [bookingData, getFetch] = useFetch("http://127.0.0.1:8000/api/books/" + user_id);
     useEffect(() => {

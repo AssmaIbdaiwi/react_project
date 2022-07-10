@@ -48,6 +48,7 @@ function App() {
         </Routes>
         <Footer />
       </userContext.Provider>
+      <Routes> <Route path="*" exact element={<Notfound />} /></Routes>
     </BrowserRouter>
 
   );

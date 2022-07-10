@@ -27,15 +27,6 @@ const Login = () => {
      })
        .then((res) => {
         setUserData(res.data)
-<<<<<<< HEAD
-        if(userData){
-          sessionStorage.setItem('user_id' , res.data.id);
-          window.location.href='http://localhost:3000/';
-          
-        }
-        
-=======
->>>>>>> ed88ffaaada0d84cd9236ec9c50e12a38054f063
 
       if (res.data.errors) {
         setError(res.data.errors);

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext} from "react";
 import "./css/style.css";
 import {useState } from "react";
 import axios from "axios";
@@ -108,6 +108,9 @@ const Login = () => {
                     >
                       Login
                     </button>
+                    <br/>
+                    <span>DON’T HAVE AN ACCOUNT?  </span>
+                    <a href="/register" style={{color:'red'}}>Sign Up</a>
                   </form>
                 </div>
               </div>

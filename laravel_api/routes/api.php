@@ -20,8 +20,12 @@ Route::get('apirooms',[RoomController::class , 'RoomAPI']);
 Route::post('addbook',[BookController::class , 'addBook']);
 Route::post('addcomment',[CommentController::class , 'addComment']);
 Route::get('contact',[ContactController::class , 'ContactAPI']);
+
+//login+register
 Route::post('register', [UserController::class, 'registerAPI']);
 Route::post('login', [UserController::class, 'loginAPI']);
+
+
 
 Route::get('getuser/{id}',[UserController::class , 'getUser']);
 

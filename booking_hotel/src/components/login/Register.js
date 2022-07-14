@@ -13,7 +13,7 @@ const navigate = useNavigate();
 const [error,setError] = useState([]);
 const handleSubmit =(e)=> {
   e.preventDefault();
-  
+
   axios({
     method: "post",
     url: "http://localhost:8000/api/register",
@@ -25,6 +25,7 @@ const handleSubmit =(e)=> {
   setError(res.data.errors)
     }
     else{
+     alert('Successfully Regiseration');
      navigate('/login')
     }
   
@@ -129,8 +130,7 @@ const handleSubmit =(e)=> {
                     <button
                       className="btn btn-primary btn-lg btn-block"
                       type="submit"
-                      style={{ backgroundColor: "#f3c300" }}
-                    >
+                      style={{ backgroundColor: "#f3c300" }}>
                       Register
                     </button>
                   </form>

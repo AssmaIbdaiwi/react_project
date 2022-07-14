@@ -6,7 +6,7 @@ import { userContext } from "../App";
 
 const ViewRoom = () => {
   const { id } = useParams();
-  ///////////comment
+ 
 
   const [comment, getCommentFetch] = useFetch("http://127.0.0.1:8000/api/apicomment/"+id);
   useEffect(() => {

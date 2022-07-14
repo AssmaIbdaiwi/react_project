@@ -10,6 +10,7 @@ use App\Models\User;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+Route::get('ourbookings',[BookController::class , 'getBooks']);
 
 Route::get('users/{id}',[UserController::class , 'getInfo']);
 Route::post('update/{id}',[UserController::class , 'update']);

@@ -17,15 +17,15 @@ const Footer =()=>{
                         <div className="row">
                             <div className="col-4">
                                 <ul className="list_asset">
-                                    <li><NavLink to="#">Home</NavLink></li>
+                                    <li><NavLink to="/">Home</NavLink></li>
                                     <li><NavLink to="#">Feature</NavLink></li>
-                                    <li><NavLink to="#">Services</NavLink></li>
+                                    <li><NavLink to="/rooms">Services</NavLink></li>
                                     <li><NavLink to="#">Portfolio</NavLink></li>
                                 </ul>
                             </div>
                             <div className="col-4">
                                 <ul className="list_asset">
-                                    <li><NavLink to="#">Team</NavLink></li>
+                                    <li><NavLink to="/contact">Team</NavLink></li>
                                     <li><NavLink to="#">Pricing</NavLink></li>
                                     <li><NavLink to="#">Blog</NavLink></li>
                                     <li><NavLink to="#">Contact</NavLink></li>

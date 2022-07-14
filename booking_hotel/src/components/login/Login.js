@@ -113,12 +113,7 @@ const Login = () => {
                     <span>DON’T HAVE AN ACCOUNT?  </span>
                     <a href="/register" style={{color:'red'}}>Sign Up</a>
                   </form>
-                  <br></br>
-                  <Link to="/register">
-
-                    Sign up
-
-                  </Link> <br></br>
+                  
                 </div>
               </div>
             </div>

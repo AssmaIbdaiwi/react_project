@@ -1,48 +1,49 @@
 import React, { useContext, useEffect } from "react";
 import "./css/style.css";
-import {useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { userContext } from "../../App";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 const Login = () => {
   const navigate = useNavigate();
 
-  const {userData , setUserData } = useContext(userContext)
-  
+  const { userData, setUserData } = useContext(userContext)
+
   const [user, setUser] = useState({
     email: "",
     pass: "",
-    
+
   });
 
-  const [error,setError] = useState([])
+  const [error, setError] = useState([])
 
-   const handleSubmit = (e) => {
-     e.preventDefault();
-    
-     axios({
-       method: "post",
-       url: "http://localhost:8000/api/login",
-       data: user
-     })
-       .then((res) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    axios({
+      method: "post",
+      url: "http://localhost:8000/api/login",
+      data: user
+    })
+      .then((res) => {
         setUserData(res.data)
 
-      if (res.data.errors) {
-        setError(res.data.errors);
-      } else {
-        sessionStorage.setItem("user_id", res.data.id);
-           navigate("/");
-      }
-      
-       }) 
-       .catch((error) => {
-         console.log(error.response.data.message);
-       });
-   };
+        if (res.data.errors) {
+          setError(res.data.errors);
+        } else {
+          sessionStorage.setItem("user_id", res.data.id);
+          navigate("/");
+        }
+
+      })
+      .catch((error) => {
+        console.log(error.response.data.message);
+      });
+  };
 
 
-   console.log(userData)
+  console.log(userData)
   return (
     <>
       <section className="vh-100 mt-5">
@@ -109,12 +110,21 @@ const Login = () => {
                       Login
                     </button>
                   </form>
+                  <br></br>
+                  <Link to="/register">
+
+                    Sign up
+
+                  </Link> <br></br>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
       </section>
+
+
     </>
   );
 };

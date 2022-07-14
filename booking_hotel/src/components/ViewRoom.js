@@ -109,7 +109,7 @@ const ViewRoom = () => {
     );
 
     if (response.ok) {
-      alert("Book Successfully");
+      alert("We will review your booking and contact you,Thanks");
       // window.location.href = "http://localhost:3000/";
     } else {
       alert("There is something wrong");
@@ -280,7 +280,7 @@ const ViewRoom = () => {
                       ):(
                         <>
                       <button className="book_now_btn button_hover">
-                        Check availability
+                        Book now
                       </button>
                         </>
                       )}

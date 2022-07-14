@@ -67,7 +67,8 @@ const UserProfile = () => {
 
             </tr>
         )
-    })
+    }
+    )
 
     return (
 
